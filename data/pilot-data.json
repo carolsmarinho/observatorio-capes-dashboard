@@ -3,21 +3,15 @@
     "title": "Observatório da Avaliação da CAPES",
     "version": "pilot_v0.1",
     "scope": "Psicologia, Química e Saúde Coletiva",
-    "note": "Dados do piloto metodológico; não generalizar para todas as áreas da CAPES."
+    "source": "Validated outputs from the CAPES Evaluation Observatory analytical pipeline",
+    "note": "Piloto metodológico. Os resultados não devem ser generalizados para todas as áreas da CAPES."
   },
   "overview": {
-    "areas": [
-      "Psicologia",
-      "Química",
-      "Saúde Coletiva"
-    ],
-    "cycles": [
-      "2017-2020",
-      "2021-2024",
-      "2025-2028"
-    ],
+    "areas": ["Psicologia", "Química", "Saúde Coletiva"],
+    "cycles": ["2017-2020", "2021-2024", "2025-2028"],
     "stable_weight_pairs_2017_2021": 72,
     "total_weight_pairs_2017_2021": 72,
+    "unchanged_operator_pairs_2017_2021": 72,
     "safe_semantic_relations": 7
   },
   "architectureByQuesito": [
@@ -91,11 +85,7 @@
   ],
   "areas": {
     "Psicologia": {
-      "ap_differences": [
-        2,
-        2,
-        0
-      ],
+      "ap_differences": [2, 2, 0],
       "current_operator": "exact",
       "context": "Em 2025–2028, desaparece a diferenciação top-level de pesos entre programas Acadêmicos e Profissionais. Entre as relações 1:1 seguras, há aumentos, estabilidade e reduções.",
       "note": "A média assinada pequena esconde redistribuições relevantes: nos vínculos seguros há mudanças de até +20 e −35 pontos percentuais.",
@@ -201,22 +191,14 @@
       ]
     },
     "Química": {
-      "ap_differences": [
-        3,
-        3,
-        2
-      ],
+      "ap_differences": [3, 3, 2],
       "current_operator": "minimum",
       "context": "A mudança central não é apenas numérica: todos os pesos top-level atuais são limiares mínimos, enquanto nos ciclos anteriores eram pesos exatos.",
       "note": "Diferenças numéricas são preservadas como referência, mas não recebem linguagem direcional de aumento ou redução.",
       "safe_changes": []
     },
     "Saúde Coletiva": {
-      "ap_differences": [
-        0,
-        0,
-        2
-      ],
+      "ap_differences": [0, 0, 2],
       "current_operator": "exact",
       "context": "A diferenciação Acadêmico/Profissional surge no ciclo 2025–2028. Nos sete vínculos 1:1 seguros, quatro pesos aumentam e três permanecem estáveis.",
       "note": "Nos sete vínculos seguros e exatos não foram observadas reduções; a média assinada foi +7,14 pontos percentuais.",
@@ -343,6 +325,259 @@
       "new_weight": 40,
       "new_operator": "exact",
       "interpretable": true
+    }
+  ],
+  "semanticRelations": [
+    {
+      "relation_id": "REL_001",
+      "quesito_id": "1",
+      "old_item_id": "1.1",
+      "old_item_text": "Articulação, aderência e atualização das áreas de concentração, linhas de pesquisa, projetos em andamento e estrutura curricular, bem como a infraestrutura disponível, em relação aos objetivos, missão e modalidade do Programa.",
+      "new_item_id": "1.1",
+      "new_item_text": "Identidade e condições de funcionamento do Programa: missão, corpo docente, infraestrutura, articulação entre áreas de concentração, linhas/projetos de pesquisa e estrutura curricular",
+      "relation_category": "reformulated_expanded",
+      "relation_topology": "pure_consolidation_component",
+      "safe_for_direct_weight_comparison": false
+    },
+    {
+      "relation_id": "REL_002",
+      "quesito_id": "1",
+      "old_item_id": "1.2",
+      "old_item_text": "Perfil do corpo docente e sua compatibilidade e adequação à Proposta do Programa.",
+      "new_item_id": "1.1",
+      "new_item_text": "Identidade e condições de funcionamento do Programa: missão, corpo docente, infraestrutura, articulação entre áreas de concentração, linhas/projetos de pesquisa e estrutura curricular",
+      "relation_category": "absorbed_into_new_item",
+      "relation_topology": "pure_consolidation_component",
+      "safe_for_direct_weight_comparison": false
+    },
+    {
+      "relation_id": "REL_003",
+      "quesito_id": "1",
+      "old_item_id": "1.3",
+      "old_item_text": "Planejamento estratégico do Programa, considerando também articulações com o planejamento estratégico da instituição, com vistas à gestão do seu desenvolvimento futuro, adequação e melhorias de infraestrutura e melhor formação de seus alunos, vinculada à produção intelectual – bibliográfica, técnica e/ou artística.",
+      "new_item_id": "1.3",
+      "new_item_text": "Planejamento estratégico do Programa em articulação com o Plano de Desenvolvimento Institucional ou equivalente, incluindo as políticas afirmativas e de promoção de equidade",
+      "relation_category": "reformulated_expanded",
+      "relation_topology": "safe_one_to_one",
+      "safe_for_direct_weight_comparison": true
+    },
+    {
+      "relation_id": "REL_004",
+      "quesito_id": "1",
+      "old_item_id": "1.4",
+      "old_item_text": "Processos, procedimentos e resultados da autoavaliação do Programa, com foco na formação discente e produção intelectual.",
+      "new_item_id": "1.2",
+      "new_item_text": "Princípios, procedimentos e usos dos resultados da autoavaliação alinhados ao planejamento estratégico do Programa",
+      "relation_category": "reformulated_renumbered",
+      "relation_topology": "safe_one_to_one",
+      "safe_for_direct_weight_comparison": true
+    },
+    {
+      "relation_id": "REL_005",
+      "quesito_id": "2",
+      "old_item_id": "2.1",
+      "old_item_text": "Qualidade e adequação das teses, dissertações ou equivalente em relação às áreas de concentração e linhas de pesquisa do Programa.",
+      "new_item_id": "2.1",
+      "new_item_text": "Qualidade das teses, dissertações ou equivalentes e adequação às áreas de concentração e linhas de pesquisa do Programa",
+      "relation_category": "retained_minor_rewording",
+      "relation_topology": "safe_one_to_one",
+      "safe_for_direct_weight_comparison": true
+    },
+    {
+      "relation_id": "REL_006",
+      "quesito_id": "2",
+      "old_item_id": "2.2",
+      "old_item_text": "Qualidade da produção intelectual de discentes e egressos.",
+      "new_item_id": "2.3",
+      "new_item_text": "Qualidade da produção intelectual de discentes e egressos do Programa",
+      "relation_category": "retained_renumbered",
+      "relation_topology": "safe_one_to_one",
+      "safe_for_direct_weight_comparison": true
+    },
+    {
+      "relation_id": "REL_007",
+      "quesito_id": "2",
+      "old_item_id": "2.3",
+      "old_item_text": "Destino, atuação e avaliação dos egressos do Programa em relação à formação recebida.",
+      "new_item_id": "2.2",
+      "new_item_text": "Destino e atuação dos egressos do Programa em relação à formação recebida",
+      "relation_category": "retained_renumbered",
+      "relation_topology": "safe_one_to_one",
+      "safe_for_direct_weight_comparison": true
+    },
+    {
+      "relation_id": "REL_008",
+      "quesito_id": "2",
+      "old_item_id": "2.4",
+      "old_item_text": "Qualidade das atividades de pesquisa e da produção intelectual do corpo docente no Programa.",
+      "new_item_id": "2.4",
+      "new_item_text": "Qualidade das atividades de pesquisa e da produção intelectual do corpo docente do Programa",
+      "relation_category": "retained_minor_rewording",
+      "relation_topology": "safe_one_to_one",
+      "safe_for_direct_weight_comparison": true
+    },
+    {
+      "relation_id": "REL_009",
+      "quesito_id": "2",
+      "old_item_id": "2.5",
+      "old_item_text": "Qualidade e envolvimento do corpo docente em relação às atividades de formação no Programa.",
+      "new_item_id": null,
+      "new_item_text": null,
+      "relation_category": "redistributed_below_top_level",
+      "relation_topology": "redistributed_below_top_level",
+      "safe_for_direct_weight_comparison": false
+    },
+    {
+      "relation_id": "REL_010",
+      "quesito_id": "3",
+      "old_item_id": "3.1",
+      "old_item_text": "Impacto e caráter inovador da produção intelectual em função da natureza do Programa.",
+      "new_item_id": "3.2",
+      "new_item_text": "Inovação, transferência e compartilhamento de conhecimento",
+      "relation_category": "split_reorganized_component",
+      "relation_topology": "split_component",
+      "safe_for_direct_weight_comparison": false
+    },
+    {
+      "relation_id": "REL_011",
+      "quesito_id": "3",
+      "old_item_id": "3.1",
+      "old_item_text": "Impacto e caráter inovador da produção intelectual em função da natureza do Programa.",
+      "new_item_id": "3.3",
+      "new_item_text": "Impactos do Programa para a sociedade",
+      "relation_category": "split_reorganized_component",
+      "relation_topology": "split_component",
+      "safe_for_direct_weight_comparison": false
+    },
+    {
+      "relation_id": "REL_012",
+      "quesito_id": "3",
+      "old_item_id": "3.2",
+      "old_item_text": "Impacto econômico, social e cultural do Programa.",
+      "new_item_id": "3.3",
+      "new_item_text": "Impactos do Programa para a sociedade",
+      "relation_category": "reformulated_generalized",
+      "relation_topology": "shared_target_component",
+      "safe_for_direct_weight_comparison": false
+    },
+    {
+      "relation_id": "REL_013",
+      "quesito_id": "3",
+      "old_item_id": "3.3",
+      "old_item_text": "Internacionalização, inserção (local, regional, nacional) e visibilidade do Programa.",
+      "new_item_id": "3.1",
+      "new_item_text": "Inserção, visibilidade, popularização da ciência",
+      "relation_category": "reformulated_shifted_scope",
+      "relation_topology": "safe_one_to_one",
+      "safe_for_direct_weight_comparison": true
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLM001",
+      "claim": "The top-level evaluation architecture was stable between 2017-2020 and 2021-2024 in the three pilot areas.",
+      "evidence": "Each pilot area retained 12 top-level items; no unmatched area-item IDs were detected.",
+      "interpretation_limit": "This concerns top-level Ficha architecture only; lower-level indicators, operational definitions, and evaluation practice may still have changed."
+    },
+    {
+      "claim_id": "CLM002",
+      "claim": "Top-level numerical weights were fully stable between 2017-2020 and 2021-2024 in the three pilot areas.",
+      "evidence": "72/72 Academic/Professional weight pairs were unchanged.",
+      "interpretation_limit": "The result is limited to Psicologia, Química, and Saúde Coletiva and should not yet be generalized to all CAPES areas."
+    },
+    {
+      "claim_id": "CLM003",
+      "claim": "The 2025-2028 model introduced a common structural reorganization in all three pilot areas.",
+      "evidence": "12 -> 10 top-level items per area; Q1 4 -> 3, Q2 5 -> 4, Q3 3 -> 3.",
+      "interpretation_limit": "A lower number of top-level items does not by itself indicate less evaluative content."
+    },
+    {
+      "claim_id": "CLM004",
+      "claim": "The 12-to-10 transition cannot be described as simple deletion of two criteria.",
+      "evidence": "Among 12 historical items: 5 were reformulated, 4 retained, 1 absorbed, 1 redistributed below top level, and 1 split/reorganized.",
+      "interpretation_limit": "These classifications derive from the validated pilot semantic crosswalk; some relations required bounded lower-level evidence."
+    },
+    {
+      "claim_id": "CLM005",
+      "claim": "Weight redistribution across semantically comparable criteria was area-specific.",
+      "evidence": "Among seven safe one-to-one relations, Psicologia showed both increases and decreases, whereas Saúde Coletiva showed increases or unchanged exact weights.",
+      "interpretation_limit": "Only seven semantically safe one-to-one relations are included; complex split, consolidation, shared-target, and redistributed relations are excluded from simple item-level deltas."
+    },
+    {
+      "claim_id": "CLM006",
+      "claim": "Química changed the semantics of top-level weighting in 2025-2028.",
+      "evidence": "All seven safe relations changed from exact historical weights to current minimum thresholds.",
+      "interpretation_limit": "A transition such as 35 to >=35 or 65 to >=60 cannot be interpreted as an unchanged weight or a numeric reduction in the same sense as exact-to-exact comparisons."
+    },
+    {
+      "claim_id": "CLM007",
+      "claim": "The consolidation of historical items 1.1 and 1.2 into current item 1.1 reduced exact top-level allocation in Psicologia and Saúde Coletiva.",
+      "evidence": "Psicologia: 80 -> 50; Saúde Coletiva: 70 -> 40.",
+      "interpretation_limit": "The same directional interpretation is not valid for Química because its current value is a minimum threshold."
+    },
+    {
+      "claim_id": "CLM008",
+      "claim": "Academic/Professional differentiation changed across waves and areas rather than following one common direction.",
+      "evidence": "Psicologia: 2 -> 2 -> 0 differentiated items; Química: 3 -> 3 -> 2; Saúde Coletiva: 0 -> 0 -> 2.",
+      "interpretation_limit": "This describes differences in top-level weights/operators only, not broader distinctions between Academic and Professional evaluation procedures."
+    }
+  ],
+  "transitions": [
+    {
+      "transition": "2017-2020 -> 2021-2024",
+      "dimension": "Top-level architecture",
+      "finding": "Stable in all three pilot areas",
+      "quantitative_evidence": "12 -> 12 items per area; same 36 area-item combinations",
+      "interpretation_status": "directly supported"
+    },
+    {
+      "transition": "2017-2020 -> 2021-2024",
+      "dimension": "Top-level weights",
+      "finding": "No detected changes",
+      "quantitative_evidence": "72/72 area-item-program weight pairs unchanged",
+      "interpretation_status": "directly supported"
+    },
+    {
+      "transition": "2017-2020 -> 2021-2024",
+      "dimension": "Weight operators",
+      "finding": "No detected changes",
+      "quantitative_evidence": "72/72 operator pairs unchanged",
+      "interpretation_status": "directly supported"
+    },
+    {
+      "transition": "2021-2024 -> 2025-2028",
+      "dimension": "Top-level architecture",
+      "finding": "Common structural contraction across the three pilot areas",
+      "quantitative_evidence": "12 -> 10 top-level items per area",
+      "interpretation_status": "directly supported"
+    },
+    {
+      "transition": "2021-2024 -> 2025-2028",
+      "dimension": "Quesito 1 architecture",
+      "finding": "Number of top-level items decreased",
+      "quantitative_evidence": "4 -> 3 items",
+      "interpretation_status": "directly supported"
+    },
+    {
+      "transition": "2021-2024 -> 2025-2028",
+      "dimension": "Quesito 2 architecture",
+      "finding": "Number of top-level items decreased",
+      "quantitative_evidence": "5 -> 4 items",
+      "interpretation_status": "directly supported"
+    },
+    {
+      "transition": "2021-2024 -> 2025-2028",
+      "dimension": "Quesito 3 architecture",
+      "finding": "Number of top-level items remained stable",
+      "quantitative_evidence": "3 -> 3 items",
+      "interpretation_status": "directly supported"
+    },
+    {
+      "transition": "2021-2024 -> 2025-2028",
+      "dimension": "Semantic organization",
+      "finding": "The 12-to-10 transition is not equivalent to simple item deletion",
+      "quantitative_evidence": "7 safe one-to-one relations and 6 non-direct relations in the final semantic crosswalk",
+      "interpretation_status": "supported by validated semantic crosswalk"
     }
   ]
 }
