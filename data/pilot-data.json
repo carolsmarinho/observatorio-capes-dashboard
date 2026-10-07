@@ -1,0 +1,348 @@
+{
+  "meta": {
+    "title": "Observatório da Avaliação da CAPES",
+    "version": "pilot_v0.1",
+    "scope": "Psicologia, Química e Saúde Coletiva",
+    "note": "Dados do piloto metodológico; não generalizar para todas as áreas da CAPES."
+  },
+  "overview": {
+    "areas": [
+      "Psicologia",
+      "Química",
+      "Saúde Coletiva"
+    ],
+    "cycles": [
+      "2017-2020",
+      "2021-2024",
+      "2025-2028"
+    ],
+    "stable_weight_pairs_2017_2021": 72,
+    "total_weight_pairs_2017_2021": 72,
+    "safe_semantic_relations": 7
+  },
+  "architectureByQuesito": [
+    {
+      "cycle": "2017-2020",
+      "quesito_id": "1",
+      "n_items": 4
+    },
+    {
+      "cycle": "2017-2020",
+      "quesito_id": "2",
+      "n_items": 5
+    },
+    {
+      "cycle": "2017-2020",
+      "quesito_id": "3",
+      "n_items": 3
+    },
+    {
+      "cycle": "2021-2024",
+      "quesito_id": "1",
+      "n_items": 4
+    },
+    {
+      "cycle": "2021-2024",
+      "quesito_id": "2",
+      "n_items": 5
+    },
+    {
+      "cycle": "2021-2024",
+      "quesito_id": "3",
+      "n_items": 3
+    },
+    {
+      "cycle": "2025-2028",
+      "quesito_id": "1",
+      "n_items": 3
+    },
+    {
+      "cycle": "2025-2028",
+      "quesito_id": "2",
+      "n_items": 4
+    },
+    {
+      "cycle": "2025-2028",
+      "quesito_id": "3",
+      "n_items": 3
+    }
+  ],
+  "semanticClasses": [
+    {
+      "key": "reformulated",
+      "count": 5
+    },
+    {
+      "key": "retained",
+      "count": 4
+    },
+    {
+      "key": "absorbed",
+      "count": 1
+    },
+    {
+      "key": "redistributed_below_top_level",
+      "count": 1
+    },
+    {
+      "key": "split_reorganized",
+      "count": 1
+    }
+  ],
+  "areas": {
+    "Psicologia": {
+      "ap_differences": [
+        2,
+        2,
+        0
+      ],
+      "current_operator": "exact",
+      "context": "Em 2025–2028, desaparece a diferenciação top-level de pesos entre programas Acadêmicos e Profissionais. Entre as relações 1:1 seguras, há aumentos, estabilidade e reduções.",
+      "note": "A média assinada pequena esconde redistribuições relevantes: nos vínculos seguros há mudanças de até +20 e −35 pontos percentuais.",
+      "safe_changes": [
+        {
+          "program_type": "academic",
+          "old_item": "1.3",
+          "new_item": "1.3",
+          "label": "planejamento estratégico",
+          "delta": 20
+        },
+        {
+          "program_type": "academic",
+          "old_item": "1.4",
+          "new_item": "1.2",
+          "label": "autoavaliação",
+          "delta": 10
+        },
+        {
+          "program_type": "academic",
+          "old_item": "2.1",
+          "new_item": "2.1",
+          "label": "teses e dissertações",
+          "delta": 5
+        },
+        {
+          "program_type": "academic",
+          "old_item": "2.2",
+          "new_item": "2.3",
+          "label": "produção discente/egressos",
+          "delta": -5
+        },
+        {
+          "program_type": "academic",
+          "old_item": "2.3",
+          "new_item": "2.2",
+          "label": "destino e atuação de egressos",
+          "delta": 10
+        },
+        {
+          "program_type": "academic",
+          "old_item": "2.4",
+          "new_item": "2.4",
+          "label": "pesquisa e produção docente",
+          "delta": 0
+        },
+        {
+          "program_type": "academic",
+          "old_item": "3.3",
+          "new_item": "3.1",
+          "label": "inserção, visibilidade e popularização",
+          "delta": -35
+        },
+        {
+          "program_type": "professional",
+          "old_item": "1.3",
+          "new_item": "1.3",
+          "label": "planejamento estratégico",
+          "delta": 20
+        },
+        {
+          "program_type": "professional",
+          "old_item": "1.4",
+          "new_item": "1.2",
+          "label": "autoavaliação",
+          "delta": 10
+        },
+        {
+          "program_type": "professional",
+          "old_item": "2.1",
+          "new_item": "2.1",
+          "label": "teses e dissertações",
+          "delta": 0
+        },
+        {
+          "program_type": "professional",
+          "old_item": "2.2",
+          "new_item": "2.3",
+          "label": "produção discente/egressos",
+          "delta": 0
+        },
+        {
+          "program_type": "professional",
+          "old_item": "2.3",
+          "new_item": "2.2",
+          "label": "destino e atuação de egressos",
+          "delta": 10
+        },
+        {
+          "program_type": "professional",
+          "old_item": "2.4",
+          "new_item": "2.4",
+          "label": "pesquisa e produção docente",
+          "delta": 0
+        },
+        {
+          "program_type": "professional",
+          "old_item": "3.3",
+          "new_item": "3.1",
+          "label": "inserção, visibilidade e popularização",
+          "delta": -35
+        }
+      ]
+    },
+    "Química": {
+      "ap_differences": [
+        3,
+        3,
+        2
+      ],
+      "current_operator": "minimum",
+      "context": "A mudança central não é apenas numérica: todos os pesos top-level atuais são limiares mínimos, enquanto nos ciclos anteriores eram pesos exatos.",
+      "note": "Diferenças numéricas são preservadas como referência, mas não recebem linguagem direcional de aumento ou redução.",
+      "safe_changes": []
+    },
+    "Saúde Coletiva": {
+      "ap_differences": [
+        0,
+        0,
+        2
+      ],
+      "current_operator": "exact",
+      "context": "A diferenciação Acadêmico/Profissional surge no ciclo 2025–2028. Nos sete vínculos 1:1 seguros, quatro pesos aumentam e três permanecem estáveis.",
+      "note": "Nos sete vínculos seguros e exatos não foram observadas reduções; a média assinada foi +7,14 pontos percentuais.",
+      "safe_changes": [
+        {
+          "program_type": "academic",
+          "old_item": "1.3",
+          "new_item": "1.3",
+          "label": "planejamento estratégico",
+          "delta": 15
+        },
+        {
+          "program_type": "academic",
+          "old_item": "1.4",
+          "new_item": "1.2",
+          "label": "autoavaliação",
+          "delta": 15
+        },
+        {
+          "program_type": "academic",
+          "old_item": "2.1",
+          "new_item": "2.1",
+          "label": "teses e dissertações",
+          "delta": 15
+        },
+        {
+          "program_type": "academic",
+          "old_item": "2.2",
+          "new_item": "2.3",
+          "label": "produção discente/egressos",
+          "delta": 0
+        },
+        {
+          "program_type": "academic",
+          "old_item": "2.3",
+          "new_item": "2.2",
+          "label": "destino e atuação de egressos",
+          "delta": 5
+        },
+        {
+          "program_type": "academic",
+          "old_item": "2.4",
+          "new_item": "2.4",
+          "label": "pesquisa e produção docente",
+          "delta": 0
+        },
+        {
+          "program_type": "academic",
+          "old_item": "3.3",
+          "new_item": "3.1",
+          "label": "inserção, visibilidade e popularização",
+          "delta": 0
+        },
+        {
+          "program_type": "professional",
+          "old_item": "1.3",
+          "new_item": "1.3",
+          "label": "planejamento estratégico",
+          "delta": 15
+        },
+        {
+          "program_type": "professional",
+          "old_item": "1.4",
+          "new_item": "1.2",
+          "label": "autoavaliação",
+          "delta": 15
+        },
+        {
+          "program_type": "professional",
+          "old_item": "2.1",
+          "new_item": "2.1",
+          "label": "teses e dissertações",
+          "delta": 15
+        },
+        {
+          "program_type": "professional",
+          "old_item": "2.2",
+          "new_item": "2.3",
+          "label": "produção discente/egressos",
+          "delta": 0
+        },
+        {
+          "program_type": "professional",
+          "old_item": "2.3",
+          "new_item": "2.2",
+          "label": "destino e atuação de egressos",
+          "delta": 5
+        },
+        {
+          "program_type": "professional",
+          "old_item": "2.4",
+          "new_item": "2.4",
+          "label": "pesquisa e produção docente",
+          "delta": 0
+        },
+        {
+          "program_type": "professional",
+          "old_item": "3.3",
+          "new_item": "3.1",
+          "label": "inserção, visibilidade e popularização",
+          "delta": 0
+        }
+      ]
+    }
+  },
+  "consolidation": [
+    {
+      "area": "Psicologia",
+      "old_weight": 80,
+      "new_weight": 50,
+      "new_operator": "exact",
+      "interpretable": true
+    },
+    {
+      "area": "Química",
+      "old_weight": 65,
+      "new_weight": 60,
+      "new_operator": "minimum",
+      "interpretable": false
+    },
+    {
+      "area": "Saúde Coletiva",
+      "old_weight": 70,
+      "new_weight": 40,
+      "new_operator": "exact",
+      "interpretable": true
+    }
+  ]
+}
