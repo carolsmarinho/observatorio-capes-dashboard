@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Piloto do Observatório da Avaliação da CAPES: evolução de critérios, pesos e arquitetura da avaliação da pós-graduação brasileira.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Observatório da Avaliação da CAPES: piloto transparente e auditável sobre mudanças em critérios, pesos e estrutura da avaliação da pós-graduação.">
   <title>Observatório da Avaliação da CAPES</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,303 +11,217 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
 
-  <header class="site-header">
-    <div class="nav-shell">
-      <a class="brand" href="#top" aria-label="Observatório da Avaliação da CAPES — início">
-        <span class="brand-mark" aria-hidden="true">O</span>
-        <span>
-          <strong>Observatório CAPES</strong>
-          <small>piloto metodológico</small>
-        </span>
-      </a>
+<header class="site-header">
+  <div class="nav-shell">
+    <a class="brand" href="#top"><span class="brand-mark">O</span><span><strong>Observatório CAPES</strong><small>piloto metodológico</small></span></a>
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a href="#entenda">Entenda</a>
+      <a href="#criterios">Critérios</a>
+      <a href="#mudancas">Mudanças</a>
+      <a href="#areas">Explore</a>
+      <a href="#fontes">Fontes & dados</a>
+      <a href="#metodo">Método</a>
+    </nav>
+    <a class="repo-link" href="https://github.com/carolsmarinho/observatorio-capes-dashboard" target="_blank" rel="noreferrer">GitHub ↗</a>
+  </div>
+</header>
 
-      <nav class="nav-links" aria-label="Navegação principal">
-        <a href="#panorama">Panorama</a>
-        <a href="#areas">Áreas</a>
-        <a href="#mudancas">Mudanças</a>
-        <a href="#metodo">Método</a>
-      </nav>
-
-      <a class="repo-link" href="https://github.com/carolsmarinho/observatorio-capes-dashboard" target="_blank" rel="noreferrer">
-        GitHub ↗
-      </a>
+<main id="main">
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div>
+        <div class="status-pill"><span></span> piloto · 3 áreas · 3 ciclos</div>
+        <p class="eyebrow">O que a CAPES avalia — e como isso mudou?</p>
+        <h1>Observatório da<br><em>Avaliação da CAPES</em></h1>
+        <p class="hero-lede">Um guia visual e verificável para entender os critérios usados na avaliação dos programas de pós-graduação, acompanhar mudanças entre ciclos e chegar da conclusão até a fonte oficial.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#entenda">Começar pelo básico</a>
+          <a class="button ghost" href="#fontes">Ir direto aos dados</a>
+        </div>
+      </div>
+      <aside class="hero-question">
+        <p class="mini-label">Resultado central do piloto</p>
+        <strong>12 → 12 → 10</strong>
+        <p>itens top-level por área</p>
+        <small>Mas “10” não significa que dois conteúdos simplesmente desapareceram. Abaixo mostramos exatamente quais critérios mudaram e como.</small>
+      </aside>
     </div>
-  </header>
+  </section>
 
-  <main id="main">
-    <section class="hero" id="top">
-      <div class="hero-noise" aria-hidden="true"></div>
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <div class="status-pill"><span></span> piloto em desenvolvimento</div>
-          <p class="eyebrow">Como a avaliação muda ao longo do tempo?</p>
-          <h1>Observatório da<br><em>Avaliação da CAPES</em></h1>
-          <p class="hero-lede">
-            Um protótipo para acompanhar, de forma transparente e auditável, como critérios,
-            pesos e estruturas da avaliação dos programas de pós-graduação brasileiros
-            evoluem entre ciclos.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#panorama">Explorar o piloto</a>
-            <a class="button button-ghost" href="#metodo">Como analisamos</a>
-          </div>
-        </div>
+  <section class="section" id="entenda">
+    <div class="section-heading">
+      <div><p class="kicker">01 · Comece aqui</p><h2>Como ler uma Ficha da CAPES?</h2></div>
+      <p>Você não precisa conhecer o sistema de avaliação antes de usar o dashboard. Estes quatro conceitos bastam para começar.</p>
+    </div>
 
-        <div class="hero-side" aria-label="Escopo do piloto">
-          <div class="cycle-stack">
-            <div class="cycle-card">
-              <span>2017–2020</span>
-              <strong>12</strong>
-              <small>itens top-level</small>
-            </div>
-            <div class="cycle-arrow" aria-hidden="true">→</div>
-            <div class="cycle-card">
-              <span>2021–2024</span>
-              <strong>12</strong>
-              <small>itens top-level</small>
-            </div>
-            <div class="cycle-arrow break" aria-hidden="true">→</div>
-            <div class="cycle-card accent">
-              <span>2025–2028</span>
-              <strong>10</strong>
-              <small>itens top-level</small>
-            </div>
-          </div>
-          <p class="hero-note">Psicologia · Química · Saúde Coletiva</p>
-        </div>
+    <div class="glossary-grid">
+      <article><span>1</span><h3>Quesito</h3><p>Uma grande dimensão da avaliação. No modelo atual, são três: Programa; Formação e Produção Intelectual; e Impacto.</p></article>
+      <article><span>2</span><h3>Item / critério</h3><p>O que é avaliado dentro de cada quesito. É aqui que aparecem, por exemplo, autoavaliação, egressos, produção docente e impacto social.</p></article>
+      <article><span>3</span><h3>Peso</h3><p>Quanto um item contribui dentro do quesito. Um valor exato como 20% é diferente de um limiar como ≥20%.</p></article>
+      <article><span>4</span><h3>Acadêmico / Profissional</h3><p>Algumas áreas usam pesos diferentes para programas acadêmicos e profissionais; outras não. Isso também muda entre ciclos.</p></article>
+    </div>
+
+    <div class="read-flow">
+      <span>Documento oficial</span><b>→</b><span>Quesito</span><b>→</b><span>Item</span><b>→</b><span>Peso / regra</span><b>→</b><span>Comparação entre ciclos</span>
+    </div>
+
+    <div class="architecture-panel">
+      <div class="panel-head">
+        <div><p class="mini-label">Arquitetura top-level</p><h3>A mesma estrutura por dois ciclos; reorganização em 2025–2028.</h3></div>
+        <p class="help-text">As barras mostram quantos itens existem dentro de cada quesito — não a importância de cada quesito.</p>
       </div>
-    </section>
+      <div id="architecture-chart" class="architecture-chart"></div>
+      <div class="legend"><span><i class="dot q1"></i>Q1 Programa</span><span><i class="dot q2"></i>Q2 Formação</span><span><i class="dot q3"></i>Q3 Impacto</span></div>
+    </div>
+  </section>
 
-    <section class="section section-overview" id="panorama">
-      <div class="section-heading">
-        <div>
-          <p class="kicker">01 · Panorama</p>
-          <h2>Estabilidade, depois reorganização.</h2>
-        </div>
-        <p>
-          Nas três áreas-piloto, os dois primeiros ciclos mantêm a mesma arquitetura e
-          os mesmos pesos top-level. A ruptura aparece em 2025–2028.
-        </p>
-      </div>
+  <section class="section alt" id="criterios">
+    <div class="section-heading">
+      <div><p class="kicker">02 · Critérios</p><h2>Quais critérios estamos comparando?</h2></div>
+      <p>Leia os textos completos antes de olhar os números. O navegador abaixo mostra os itens top-level do ciclo histórico e do ciclo atual.</p>
+    </div>
 
-      <div class="metric-grid">
-        <article class="metric-card">
-          <span class="metric-label">Áreas-piloto</span>
-          <strong class="metric-value" id="metric-areas">3</strong>
-          <span class="metric-detail">Psicologia, Química e Saúde Coletiva</span>
-        </article>
-        <article class="metric-card">
-          <span class="metric-label">Ciclos comparados</span>
-          <strong class="metric-value" id="metric-cycles">3</strong>
-          <span class="metric-detail">2017–20 · 2021–24 · 2025–28</span>
-        </article>
-        <article class="metric-card highlight">
-          <span class="metric-label">Pesos estáveis até 2024</span>
-          <strong class="metric-value">72/72</strong>
-          <span class="metric-detail">pares Acadêmico/Profissional sem mudança</span>
-        </article>
-        <article class="metric-card">
-          <span class="metric-label">Relações 1:1 seguras</span>
-          <strong class="metric-value">7</strong>
-          <span class="metric-detail">na transição para 2025–2028</span>
-        </article>
-      </div>
+    <div class="notice">
+      <strong>Sobre 2017–2020:</strong> a arquitetura top-level é a mesma observada em 2021–2024 no piloto. O navegador textual abaixo foca a transição semântica que validamos diretamente: <b>2021–2024 → 2025–2028</b>.
+    </div>
 
-      <div class="architecture-panel">
+    <div class="segmented" id="criteria-cycle">
+      <button class="active" data-cycle="2021-2024">2021–2024 · 12 itens</button>
+      <button data-cycle="2025-2028">2025–2028 · 10 itens</button>
+    </div>
+
+    <div id="criteria-browser" class="criteria-browser"></div>
+  </section>
+
+  <section class="section" id="mudancas">
+    <div class="section-heading">
+      <div><p class="kicker">03 · O que mudou?</p><h2>De 12 para 10: acompanhe critério por critério.</h2></div>
+      <p>O crosswalk compara o conteúdo, não apenas o número do item. Relações 1:1 podem ser comparadas diretamente; consolidações, divisões e redistribuições exigem outra leitura.</p>
+    </div>
+
+    <div class="semantic-summary">
+      <div id="semantic-donut" class="donut"><div><strong>12</strong><span>itens históricos</span></div></div>
+      <div id="semantic-list" class="semantic-list"></div>
+    </div>
+
+    <div class="filter-row" id="relation-filter">
+      <button class="active" data-filter="all">Todas as 13 relações</button>
+      <button data-filter="safe">7 comparáveis 1:1</button>
+      <button data-filter="complex">6 relações complexas</button>
+    </div>
+    <div id="crosswalk" class="crosswalk"></div>
+  </section>
+
+  <section class="section alt" id="areas">
+    <div class="section-heading">
+      <div><p class="kicker">04 · Explore por área</p><h2>Os mesmos critérios não recebem a mesma ponderação.</h2></div>
+      <p>Escolha uma área e um tipo de programa. Mostramos o peso anterior, a regra atual e quando uma diferença em pontos percentuais pode — ou não pode — ser interpretada.</p>
+    </div>
+
+    <div class="area-tabs" id="area-tabs">
+      <button class="active" data-area="Psicologia">Psicologia</button>
+      <button data-area="Química">Química</button>
+      <button data-area="Saúde Coletiva">Saúde Coletiva</button>
+    </div>
+
+    <div class="area-shell">
+      <aside class="area-summary">
+        <p class="mini-label">Área selecionada</p>
+        <h3 id="area-name">Psicologia</h3>
+        <dl>
+          <div><dt>Diferenças A/P</dt><dd id="area-ap"></dd></div>
+          <div><dt>Regra atual</dt><dd id="area-operator"></dd></div>
+          <div><dt>Relações 1:1</dt><dd>7</dd></div>
+        </dl>
+        <p id="area-context" class="help-text"></p>
+        <a id="area-source" class="text-link" href="#fontes">Ver Fichas desta área ↓</a>
+      </aside>
+
+      <div class="weight-panel">
         <div class="panel-head">
-          <div>
-            <p class="mini-label">Arquitetura top-level</p>
-            <h3>Os 12 itens permanecem estáveis por dois ciclos.</h3>
-          </div>
-          <div class="legend">
-            <span><i class="dot q1"></i>Quesito 1</span>
-            <span><i class="dot q2"></i>Quesito 2</span>
-            <span><i class="dot q3"></i>Quesito 3</span>
+          <div><p class="mini-label">2021–2024 → 2025–2028</p><h3>Pesos nas sete relações 1:1</h3></div>
+          <div class="segmented compact" id="program-toggle">
+            <button class="active" data-program="academic">Acadêmico</button>
+            <button data-program="professional">Profissional</button>
           </div>
         </div>
-
-        <div class="architecture-chart" id="architecture-chart" aria-label="Itens por quesito e ciclo"></div>
-        <p class="chart-caption">
-          Padrão idêntico nas três áreas-piloto: Q1 4→4→3, Q2 5→5→4 e Q3 3→3→3.
-        </p>
+        <div class="table-scroll"><table class="weight-table"><thead><tr><th>Critério</th><th>Antes</th><th>Agora</th><th>Leitura</th></tr></thead><tbody id="weight-table-body"></tbody></table></div>
+        <div id="weight-note" class="explain-box"></div>
       </div>
-    </section>
-
-    <section class="section section-areas" id="areas">
-      <div class="section-heading">
-        <div>
-          <p class="kicker">02 · Explore por área</p>
-          <h2>A reforma não produz o mesmo efeito em todos os campos.</h2>
-        </div>
-        <p>
-          Selecione uma área para ver diferenciação Acadêmico/Profissional, semântica dos
-          pesos e mudanças nas relações comparáveis.
-        </p>
-      </div>
-
-      <div class="area-tabs" role="tablist" aria-label="Selecionar área">
-        <button class="area-tab active" data-area="Psicologia" role="tab" aria-selected="true">Psicologia</button>
-        <button class="area-tab" data-area="Química" role="tab" aria-selected="false">Química</button>
-        <button class="area-tab" data-area="Saúde Coletiva" role="tab" aria-selected="false">Saúde Coletiva</button>
-      </div>
-
-      <div class="area-dashboard">
-        <aside class="area-summary">
-          <p class="mini-label">Área selecionada</p>
-          <h3 id="area-name">Psicologia</h3>
-          <div class="area-stat">
-            <span>Diferenças A/P</span>
-            <strong id="area-ap">2 → 2 → 0</strong>
-          </div>
-          <div class="area-stat">
-            <span>Regra de peso atual</span>
-            <strong id="area-operator">Exata</strong>
-          </div>
-          <div class="area-stat">
-            <span>Relações 1:1 comparáveis</span>
-            <strong>7</strong>
-          </div>
-          <p class="area-context" id="area-context"></p>
-        </aside>
-
-        <div class="area-viz">
-          <div class="viz-head">
-            <div>
-              <p class="mini-label">2021–2024 → 2025–2028</p>
-              <h3 id="viz-title">Mudança em pesos exatos comparáveis</h3>
-            </div>
-            <div class="program-toggle" id="program-toggle">
-              <button class="active" data-program="academic">Acadêmico</button>
-              <button data-program="professional">Profissional</button>
-            </div>
-          </div>
-          <div id="weight-chart" class="weight-chart" aria-live="polite"></div>
-          <div id="weight-note" class="weight-note"></div>
-        </div>
-      </div>
-
-      <div class="consolidation-grid" id="consolidation-grid"></div>
-    </section>
-
-    <section class="section section-changes" id="mudancas">
-      <div class="section-heading">
-        <div>
-          <p class="kicker">03 · O que mudou?</p>
-          <h2>12 → 10 não significa “dois critérios desapareceram”.</h2>
-        </div>
-        <p>
-          O crosswalk semântico mostra retenções, reformulações, absorção, redistribuição
-          e divisão de critérios.
-        </p>
-      </div>
-
-      <div class="semantic-layout">
-        <div class="donut-wrap">
-          <div class="donut" id="semantic-donut" role="img" aria-label="Distribuição das classes semânticas">
-            <div class="donut-center">
-              <strong>12</strong>
-              <span>itens históricos</span>
-            </div>
-          </div>
-        </div>
-        <div class="semantic-list" id="semantic-list"></div>
-      </div>
-
-      <div class="crosswalk-callout">
-        <div class="callout-number">7</div>
-        <div>
-          <p class="mini-label">Relações seguras para comparação direta</p>
-          <h3>Nem todo número igual representa o mesmo critério.</h3>
-          <p>
-            A comparação de pesos entre 2021–2024 e 2025–2028 só é feita diretamente
-            quando o vínculo semântico é 1:1 e o tipo de peso é compatível.
-          </p>
-        </div>
-      </div>
-
-      <div class="relation-grid">
-        <article>
-          <span class="relation-tag">Consolidação</span>
-          <h4>1.1 + 1.2 → novo 1.1</h4>
-          <p>Dois critérios históricos passam a compor um critério atual mais amplo.</p>
-        </article>
-        <article>
-          <span class="relation-tag">Redistribuição</span>
-          <h4>2.5 → abaixo do top-level</h4>
-          <p>O conteúdo deixa de ter contraparte top-level direta, mas não some da Ficha.</p>
-        </article>
-        <article>
-          <span class="relation-tag">Divisão</span>
-          <h4>3.1 → 3.2 + 3.3</h4>
-          <p>O antigo critério de impacto/inovação é reorganizado entre dois novos critérios.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section-method" id="metodo">
-      <div class="section-heading">
-        <div>
-          <p class="kicker">04 · Método & limites</p>
-          <h2>O dashboard mostra só o que a evidência permite comparar.</h2>
-        </div>
-        <p>
-          O piloto foi desenhado para que cada visualização tenha uma regra explícita de
-          comparabilidade e um caminho de volta aos dados validados.
-        </p>
-      </div>
-
-      <div class="method-grid">
-        <article class="method-card">
-          <span>01</span>
-          <h3>Documentos oficiais</h3>
-          <p>Fichas de Avaliação da CAPES são tratadas como fonte primária para arquitetura e pesos top-level.</p>
-        </article>
-        <article class="method-card">
-          <span>02</span>
-          <h3>Validação humana</h3>
-          <p>Extrações críticas foram verificadas contra as Fichas oficiais; no ciclo 2021–2024, 36 itens / 72 pesos foram confirmados.</p>
-        </article>
-        <article class="method-card">
-          <span>03</span>
-          <h3>Crosswalk semântico</h3>
-          <p>A mudança 12→10 é comparada por conteúdo, não por coincidência numérica dos IDs.</p>
-        </article>
-        <article class="method-card">
-          <span>04</span>
-          <h3>Operadores separados</h3>
-          <p>Peso exato e limiar mínimo são tratados como regras diferentes. “65 → ≥60” não é chamado de redução de 5 pontos.</p>
-        </article>
-      </div>
-
-      <div class="limits-box">
-        <div>
-          <p class="mini-label">Limite do piloto</p>
-          <h3>Três áreas ≠ toda a CAPES.</h3>
-        </div>
-        <p>
-          Estes resultados descrevem Psicologia, Química e Saúde Coletiva no nível
-          top-level. Estabilidade formal não implica ausência de mudanças em indicadores,
-          operacionalização ou prática avaliativa. O próximo estágio do Observatório é
-          ampliar a cobertura para as demais áreas.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div>
-      <strong>Observatório da Avaliação da CAPES</strong>
-      <p>Piloto metodológico · dados validados · versão 0.1</p>
     </div>
-    <div class="footer-links">
-      <a href="https://github.com/carolsmarinho/observatorio-capes-dashboard" target="_blank" rel="noreferrer">Código & dados ↗</a>
-      <a href="#top">Voltar ao topo ↑</a>
-    </div>
-  </footer>
 
-  <noscript>Este dashboard precisa de JavaScript habilitado para exibir as visualizações interativas.</noscript>
-  <script src="app.js"></script>
+    <div class="consolidation-block">
+      <p class="mini-label">Exemplo de relação que NÃO é 1:1</p>
+      <h3>1.1 + 1.2 históricos → novo 1.1</h3>
+      <p>Dois critérios históricos foram consolidados. Por isso, a comparação usa a soma dos dois pesos históricos, e não trata cada componente como se tivesse um sucessor independente.</p>
+      <div id="consolidation-grid" class="consolidation-grid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="fontes">
+    <div class="section-heading">
+      <div><p class="kicker">05 · Fontes & dados</p><h2>Não precisa confiar no gráfico: confira.</h2></div>
+      <p>Cada resultado público deve ter uma saída de dados e um caminho de volta à documentação oficial da CAPES.</p>
+    </div>
+
+    <div class="source-intro">
+      <div><strong id="qa-status">Carregando auditoria…</strong><span>checagens do exportador do dashboard</span></div>
+      <div><strong>9</strong><span>entradas de fontes primárias no registro público</span></div>
+      <div><strong>8</strong><span>claims com evidência + limite explícito</span></div>
+    </div>
+
+    <h3 class="subheading">Documentos oficiais usados no piloto</h3>
+    <p class="help-text wide">As Fichas de Avaliação são a fonte primária para arquitetura e pesos top-level. Para 2017–2020, o link leva à página de memória da área, onde a Ficha histórica está preservada.</p>
+    <div id="source-documents" class="source-documents"></div>
+
+    <h3 class="subheading">Baixar saídas públicas</h3>
+    <div class="downloads">
+      <a href="data/criteria.csv" download><b>criteria.csv</b><span>22 critérios: textos 2021–2024 e 2025–2028</span></a>
+      <a href="data/semantic-crosswalk.csv" download><b>semantic-crosswalk.csv</b><span>13 relações semânticas e status de comparabilidade</span></a>
+      <a href="data/comparable-weights.csv" download><b>comparable-weights.csv</b><span>pesos antes/agora nas sete relações 1:1</span></a>
+      <a href="data/claims-evidence-limits.csv" download><b>claims-evidence-limits.csv</b><span>o que afirmamos, evidência e limite</span></a>
+      <a href="data/source-documents.csv" download><b>source-documents.csv</b><span>registro das Fichas e links oficiais</span></a>
+      <a href="data/pilot-data.json" download><b>pilot-data.json</b><span>camada principal exportada do pipeline analítico</span></a>
+      <a href="data/evidence-data.json" download><b>evidence-data.json</b><span>camada de rastreabilidade usada pela interface</span></a>
+      <a href="data/dashboard_sync_audit.csv" download><b>dashboard_sync_audit.csv</b><span>checagens de sincronização e QA</span></a>
+    </div>
+
+    <h3 class="subheading">Claims, evidência e limites</h3>
+    <div id="claims-list" class="claims-list"></div>
+  </section>
+
+  <section class="section alt" id="metodo">
+    <div class="section-heading">
+      <div><p class="kicker">06 · Método</p><h2>Como chegamos do PDF ao dashboard?</h2></div>
+      <p>A separação entre fonte, extração, validação, harmonização e visualização é intencional: permite atualizar o observatório sem perder a trilha de proveniência.</p>
+    </div>
+
+    <div class="pipeline">
+      <article><span>01</span><h3>Coleta</h3><p>Fichas e documentos oficiais da CAPES, organizados por área e ciclo.</p></article>
+      <article><span>02</span><h3>Extração</h3><p>Texto, estrutura, itens e pesos são extraídos preservando identificadores e páginas de origem.</p></article>
+      <article><span>03</span><h3>Validação</h3><p>No ciclo 2021–2024, 36 pares de itens foram conferidos diretamente nas Fichas e representam 72 linhas A/P.</p></article>
+      <article><span>04</span><h3>Crosswalk</h3><p>Critérios antigos e atuais são ligados pelo conteúdo, com relações 1:1 ou complexas explicitamente classificadas.</p></article>
+      <article><span>05</span><h3>QA + exportação</h3><p>O dashboard só recebe saídas depois que as verificações automáticas passam.</p></article>
+    </div>
+
+    <div class="limits-box">
+      <div><p class="mini-label">O que este piloto não permite concluir</p><h3>Três áreas não representam toda a CAPES.</h3></div>
+      <div>
+        <p>Os resultados descrevem Psicologia, Química e Saúde Coletiva no nível top-level. Uma estrutura estável não implica indicadores, definições operacionais ou prática avaliativa estáveis.</p>
+        <p>A validação manual citada acima foi feita pela pesquisadora responsável pelo estudo; não é uma validação independente por segundo codificador.</p>
+        <p><b>Regra crítica:</b> 65 → ≥60 não é interpretado como −5 pontos percentuais. O operador mudou de peso exato para limiar mínimo.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div><strong>Observatório da Avaliação da CAPES</strong><p>Piloto metodológico · versão pública 0.2 · Psicologia, Química e Saúde Coletiva</p></div>
+  <div class="footer-links"><a href="data/README.md">Sobre os dados</a><a href="https://github.com/carolsmarinho/observatorio-capes-dashboard" target="_blank" rel="noreferrer">GitHub ↗</a><a href="#top">Topo ↑</a></div>
+</footer>
+
+<script src="app.js"></script>
 </body>
 </html>

@@ -1,0 +1,43 @@
+area,program_type,relation_id,old_item_id,new_item_id,label,old_weight,old_operator,new_weight,new_operator,delta,interpretable
+Psicologia,academic,REL_003,1.3,1.3,planejamento estratégico,10,exact,30,exact,20,true
+Psicologia,academic,REL_004,1.4,1.2,autoavaliação,10,exact,20,exact,10,true
+Psicologia,academic,REL_005,2.1,2.1,teses e dissertações,15,exact,20,exact,5,true
+Psicologia,academic,REL_006,2.2,2.3,produção discente/egressos,25,exact,20,exact,-5,true
+Psicologia,academic,REL_007,2.3,2.2,destino e atuação de egressos,10,exact,20,exact,10,true
+Psicologia,academic,REL_008,2.4,2.4,pesquisa e produção docente,40,exact,40,exact,0,true
+Psicologia,academic,REL_013,3.3,3.1,"inserção, visibilidade e popularização",60,exact,25,exact,-35,true
+Psicologia,professional,REL_003,1.3,1.3,planejamento estratégico,10,exact,30,exact,20,true
+Psicologia,professional,REL_004,1.4,1.2,autoavaliação,10,exact,20,exact,10,true
+Psicologia,professional,REL_005,2.1,2.1,teses e dissertações,20,exact,20,exact,0,true
+Psicologia,professional,REL_006,2.2,2.3,produção discente/egressos,20,exact,20,exact,0,true
+Psicologia,professional,REL_007,2.3,2.2,destino e atuação de egressos,10,exact,20,exact,10,true
+Psicologia,professional,REL_008,2.4,2.4,pesquisa e produção docente,40,exact,40,exact,0,true
+Psicologia,professional,REL_013,3.3,3.1,"inserção, visibilidade e popularização",60,exact,25,exact,-35,true
+Química,academic,REL_003,1.3,1.3,planejamento estratégico,20,exact,20,minimum,,false
+Química,academic,REL_004,1.4,1.2,autoavaliação,15,exact,20,minimum,,false
+Química,academic,REL_005,2.1,2.1,teses e dissertações,30,exact,30,minimum,,false
+Química,academic,REL_006,2.2,2.3,produção discente/egressos,25,exact,30,minimum,,false
+Química,academic,REL_007,2.3,2.2,destino e atuação de egressos,20,exact,20,minimum,,false
+Química,academic,REL_008,2.4,2.4,pesquisa e produção docente,15,exact,20,minimum,,false
+Química,academic,REL_013,3.3,3.1,"inserção, visibilidade e popularização",35,exact,35,minimum,,false
+Química,professional,REL_003,1.3,1.3,planejamento estratégico,20,exact,20,minimum,,false
+Química,professional,REL_004,1.4,1.2,autoavaliação,15,exact,20,minimum,,false
+Química,professional,REL_005,2.1,2.1,teses e dissertações,30,exact,30,minimum,,false
+Química,professional,REL_006,2.2,2.3,produção discente/egressos,25,exact,30,minimum,,false
+Química,professional,REL_007,2.3,2.2,destino e atuação de egressos,20,exact,20,minimum,,false
+Química,professional,REL_008,2.4,2.4,pesquisa e produção docente,15,exact,20,minimum,,false
+Química,professional,REL_013,3.3,3.1,"inserção, visibilidade e popularização",25,exact,25,minimum,,false
+Saúde Coletiva,academic,REL_003,1.3,1.3,planejamento estratégico,15,exact,30,exact,15,true
+Saúde Coletiva,academic,REL_004,1.4,1.2,autoavaliação,15,exact,30,exact,15,true
+Saúde Coletiva,academic,REL_005,2.1,2.1,teses e dissertações,15,exact,30,exact,15,true
+Saúde Coletiva,academic,REL_006,2.2,2.3,produção discente/egressos,20,exact,20,exact,0,true
+Saúde Coletiva,academic,REL_007,2.3,2.2,destino e atuação de egressos,15,exact,20,exact,5,true
+Saúde Coletiva,academic,REL_008,2.4,2.4,pesquisa e produção docente,30,exact,30,exact,0,true
+Saúde Coletiva,academic,REL_013,3.3,3.1,"inserção, visibilidade e popularização",30,exact,30,exact,0,true
+Saúde Coletiva,professional,REL_003,1.3,1.3,planejamento estratégico,15,exact,30,exact,15,true
+Saúde Coletiva,professional,REL_004,1.4,1.2,autoavaliação,15,exact,30,exact,15,true
+Saúde Coletiva,professional,REL_005,2.1,2.1,teses e dissertações,15,exact,30,exact,15,true
+Saúde Coletiva,professional,REL_006,2.2,2.3,produção discente/egressos,20,exact,20,exact,0,true
+Saúde Coletiva,professional,REL_007,2.3,2.2,destino e atuação de egressos,15,exact,20,exact,5,true
+Saúde Coletiva,professional,REL_008,2.4,2.4,pesquisa e produção docente,30,exact,30,exact,0,true
+Saúde Coletiva,professional,REL_013,3.3,3.1,"inserção, visibilidade e popularização",30,exact,30,exact,0,true
