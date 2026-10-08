@@ -148,4 +148,1082 @@ function renderClaims(){
   document.getElementById("claims-list").innerHTML=DATA.claims.map(c=>'<article class="claim"><button type="button"><b>'+esc(c.claim_id)+' · '+esc(c.claim)+'</b><span>+</span></button><div class="claim-body"><p><strong>Evidência</strong>'+esc(c.evidence)+'</p><p><strong>Limite</strong>'+esc(c.interpretation_limit)+'</p></div></article>').join("");
   document.querySelectorAll(".claim button").forEach(b=>b.onclick=()=>{const c=b.parentElement;c.classList.toggle("open");b.querySelector("span").textContent=c.classList.contains("open")?"−":"+";});
 }
+// RBR_MODULE_START
+
+const RBR_URL="data/rbr-data.json";
+
+let RBR_DATA=null;
+let currentRBRArea="Psicologia";
+
+
+async function loadRBR(){
+
+  const target=
+    document.getElementById(
+      "rbr-longitudinal-matrix"
+    );
+
+
+  if(!target)return;
+
+
+  try{
+
+    const response=
+      await fetch(
+        RBR_URL,
+        {
+          cache:"no-store"
+        }
+      );
+
+
+    if(!response.ok){
+
+      throw new Error(
+        "Falha ao carregar a camada longitudinal RBR."
+      );
+    }
+
+
+    RBR_DATA=
+      await response.json();
+
+
+    renderRBRAreaTabs();
+    renderRBRSummary();
+    renderRBRLongitudinal();
+
+
+  }catch(err){
+
+    console.error(err);
+
+
+    target.innerHTML=
+      '<div class="notice">Não foi possível carregar a camada de Ciência Aberta. Consulte os arquivos <b>data/rbr-*</b>.</div>';
+  }
+}
+
+
+function rbrAreas(){
+
+  const preferred=[
+    "Psicologia",
+    "Química",
+    "Saúde Coletiva"
+  ];
+
+
+  const available=[
+    ...new Set(
+      RBR_DATA.longitudinalMatrix.map(
+        d=>d.area
+      )
+    )
+  ];
+
+
+  return preferred
+    .filter(
+      a=>available.includes(a)
+    )
+    .concat(
+      available.filter(
+        a=>!preferred.includes(a)
+      )
+    );
+}
+
+
+function rbrRecommendations(){
+
+  const map=
+    new Map();
+
+
+  RBR_DATA.longitudinalMatrix.forEach(
+    row=>{
+
+      if(
+        !map.has(
+          row.recommendation_id
+        )
+      ){
+
+        map.set(
+          row.recommendation_id,
+          {
+            id:
+              row.recommendation_id,
+
+            label:
+              row.recommendation_label
+          }
+        );
+      }
+    }
+  );
+
+
+  return [
+    ...map.values()
+  ].sort(
+    (a,b)=>
+      a.id.localeCompare(
+        b.id,
+        undefined,
+        {
+          numeric:true
+        }
+      )
+  );
+}
+
+
+function rbrCycles(){
+
+  return [
+    {
+      id:"2017-2020",
+      label:"2017–2020"
+    },
+    {
+      id:"2021-2024",
+      label:"2021–2024"
+    },
+    {
+      id:"2025-2028",
+      label:"2025–2028"
+    }
+  ];
+}
+
+
+function renderRBRAreaTabs(){
+
+  const target=
+    document.getElementById(
+      "rbr-area-tabs"
+    );
+
+
+  if(!target)return;
+
+
+  const areas=
+    rbrAreas();
+
+
+  if(
+    !areas.includes(
+      currentRBRArea
+    )
+  ){
+
+    currentRBRArea=
+      areas[0];
+  }
+
+
+  target.innerHTML=
+    areas.map(
+      area=>
+
+        '<button '+
+          'type="button" '+
+          'class="'+
+            (
+              area===currentRBRArea
+                ? "active"
+                : ""
+            )+
+          '" '+
+          'data-rbr-area-tab="'+
+            esc(area)+
+          '">'+
+            esc(area)+
+        '</button>'
+
+    ).join("");
+
+
+  target.querySelectorAll(
+    "[data-rbr-area-tab]"
+  ).forEach(
+    button=>{
+
+      button.onclick=()=>{
+
+        currentRBRArea=
+          button.dataset.rbrAreaTab;
+
+
+        renderRBRAreaTabs();
+        renderRBRLongitudinal();
+      };
+    }
+  );
+
+
+  const selected=
+    document.getElementById(
+      "rbr-selected-area"
+    );
+
+
+  if(selected){
+
+    selected.textContent=
+      currentRBRArea;
+  }
+}
+
+
+function renderRBRSummary(){
+
+  if(!RBR_DATA)return;
+
+
+  const summary=
+    document.getElementById(
+      "rbr-summary"
+    );
+
+
+  if(!summary)return;
+
+
+  const total=
+    RBR_DATA.evidence.length;
+
+
+  const validated=
+    RBR_DATA.evidence.filter(
+      d=>
+        d.machine_source_validation_pass===true ||
+        String(
+          d.machine_source_validation_pass
+        ).toUpperCase()==="TRUE"
+    ).length;
+
+
+  summary.innerHTML=
+
+    '<div class="panel compact-panel">'+
+      '<strong>'+
+        total+
+      '</strong>'+
+      '<span>evidências candidatas</span>'+
+    '</div>'+
+
+    '<div class="panel compact-panel">'+
+      '<strong>'+
+        validated+
+        "/"+
+        total+
+      '</strong>'+
+      '<span>verificadas na fonte</span>'+
+    '</div>'+
+
+    '<div class="panel compact-panel">'+
+      '<strong>2025–2028</strong>'+
+      '<span>ciclo com screening piloto</span>'+
+    '</div>'+
+
+    '<div class="panel compact-panel">'+
+      '<strong>2</strong>'+
+      '<span>ciclos históricos ainda pendentes</span>'+
+    '</div>';
+}
+
+
+function rbrPlural(
+  n,
+  singular,
+  plural
+){
+
+  return (
+    n+
+    " "+
+    (
+      n===1
+        ? singular
+        : plural
+    )
+  );
+}
+
+
+function rbrCandidateSummary(cell){
+
+  const parts=[];
+
+
+  const pro=
+    Number(
+      cell.pro_n||0
+    );
+
+
+  const contra=
+    Number(
+      cell.contra_n||0
+    );
+
+
+  const adjacent=
+    Number(
+      cell.adjacent_n||0
+    );
+
+
+  if(pro>0){
+
+    parts.push(
+      '<span class="rbr-result-chip pro">'+
+        rbrPlural(
+          pro,
+          "alinhamento",
+          "alinhamentos"
+        )+
+      '</span>'
+    );
+  }
+
+
+  if(contra>0){
+
+    parts.push(
+      '<span class="rbr-result-chip contra">'+
+        rbrPlural(
+          contra,
+          "tensão",
+          "tensões"
+        )+
+      '</span>'
+    );
+  }
+
+
+  if(adjacent>0){
+
+    parts.push(
+      '<span class="rbr-result-chip adjacent">'+
+        rbrPlural(
+          adjacent,
+          "adjacente",
+          "adjacentes"
+        )+
+      '</span>'
+    );
+  }
+
+
+  return parts.join("");
+}
+
+
+function rbrCellContent(cell){
+
+  if(
+    cell.analysis_status===
+      "not_analyzed"
+  ){
+
+    return (
+      '<div class="rbr-cell-state pending">'+
+
+        '<strong>▧ Ainda não analisado</strong>'+
+
+        '<span>screening RBR pendente</span>'+
+
+        '<small>Ver status →</small>'+
+
+      '</div>'
+    );
+  }
+
+
+  const candidateN=
+    Number(
+      cell.candidate_n||0
+    );
+
+
+  if(candidateN===0){
+
+    return (
+      '<div class="rbr-cell-state empty">'+
+
+        '<strong>○ Nenhum candidato</strong>'+
+
+        '<span>no trecho analisado</span>'+
+
+        '<small>Ver trecho →</small>'+
+
+      '</div>'
+    );
+  }
+
+
+  return (
+    '<div class="rbr-cell-state has-evidence">'+
+
+      '<div class="rbr-result-chips">'+
+        rbrCandidateSummary(
+          cell
+        )+
+      '</div>'+
+
+      '<small>Ver '+
+        candidateN+
+        (
+          candidateN===1
+            ? " evidência"
+            : " evidências"
+        )+
+        " →</small>"+
+    '</div>'
+  );
+}
+
+
+function renderRBRLongitudinal(){
+
+  if(!RBR_DATA)return;
+
+
+  const target=
+    document.getElementById(
+      "rbr-longitudinal-matrix"
+    );
+
+
+  if(!target)return;
+
+
+  const recommendations=
+    rbrRecommendations();
+
+
+  const cycles=
+    rbrCycles();
+
+
+  const rows=
+    RBR_DATA.longitudinalMatrix.filter(
+      d=>
+        d.area===
+        currentRBRArea
+    );
+
+
+  let html=
+    '<div class="rbr-long-grid">';
+
+
+  html+=
+    '<div class="rbr-long-corner">'+
+      "Recomendação RBR"+
+    '</div>';
+
+
+  cycles.forEach(
+    cycle=>{
+
+      html+=
+        '<div class="rbr-cycle-head '+
+          (
+            cycle.id==="2025-2028"
+              ? "screened"
+              : "pending"
+          )+
+        '">'+
+
+          '<strong>'+
+            cycle.label+
+          '</strong>'+
+
+          '<span>'+
+            (
+              cycle.id==="2025-2028"
+                ? "proof of concept"
+                : "ainda não analisado"
+            )+
+          '</span>'+
+
+        '</div>';
+    }
+  );
+
+
+  recommendations.forEach(
+    rec=>{
+
+      html+=
+        '<div class="rbr-rec-label">'+
+
+          '<b>'+
+            esc(
+              rec.id
+            )+
+          '</b>'+
+
+          '<span>'+
+            esc(
+              rec.label
+            )+
+          '</span>'+
+
+        '</div>';
+
+
+      cycles.forEach(
+        cycle=>{
+
+          const cell=
+            rows.find(
+              d=>
+                d.recommendation_id===
+                  rec.id &&
+                d.cycle===
+                  cycle.id
+            );
+
+
+          if(!cell){
+
+            html+=
+              '<div class="rbr-long-cell missing">—</div>';
+
+            return;
+          }
+
+
+          html+=
+            '<button '+
+              'type="button" '+
+              'class="rbr-long-cell '+
+                esc(
+                  cell.cell_state
+                )+
+              '" '+
+              'data-rbr-cycle="'+
+                esc(
+                  cycle.id
+                )+
+              '" '+
+              'data-rbr-recommendation="'+
+                esc(
+                  rec.id
+                )+
+              '" '+
+              'aria-label="'+
+                esc(
+                  currentRBRArea+
+                  " · "+
+                  cycle.label+
+                  " · "+
+                  rec.id+
+                  " · "+
+                  cell.cell_state_label_pt
+                )+
+              '">'+
+
+              rbrCellContent(
+                cell
+              )+
+
+            '</button>';
+        }
+      );
+    }
+  );
+
+
+  html+="</div>";
+
+
+  target.innerHTML=
+    html;
+
+
+  target.querySelectorAll(
+    "[data-rbr-cycle]"
+  ).forEach(
+    button=>{
+
+      button.onclick=()=>{
+
+        showRBRLongitudinalCell(
+          currentRBRArea,
+          button.dataset.rbrCycle,
+          button.dataset.rbrRecommendation
+        );
+      };
+    }
+  );
+}
+
+
+function rbrDirectionClass(direction){
+
+  if(
+    direction===
+      "pro_candidate"
+  ){
+
+    return "pro";
+  }
+
+
+  if(
+    direction===
+      "contra_candidate"
+  ){
+
+    return "contra";
+  }
+
+
+  return "adjacent";
+}
+
+
+function rbrDirectionLabel(row){
+
+  if(
+    row.direction_label_pt
+  ){
+
+    return row.direction_label_pt;
+  }
+
+
+  if(
+    row.evidence_direction===
+      "pro_candidate"
+  ){
+
+    return "Alinhamento candidato";
+  }
+
+
+  if(
+    row.evidence_direction===
+      "contra_candidate"
+  ){
+
+    return "Tensão candidata";
+  }
+
+
+  return "Evidência adjacente";
+}
+
+
+function rbrCycleDisplay(cycle){
+
+  const match=
+    rbrCycles().find(
+      d=>
+        d.id===
+        cycle
+    );
+
+
+  return (
+    match
+      ? match.label
+      : cycle
+  );
+}
+
+
+
+
+function showRBRLongitudinalCell(
+  area,
+  cycle,
+  recommendationId
+){
+
+  if(!RBR_DATA)return;
+
+
+  const detail=
+    document.getElementById(
+      "rbr-evidence-detail"
+    );
+
+
+  if(!detail)return;
+
+
+  const cell=
+    RBR_DATA.longitudinalMatrix.find(
+      d=>
+        d.area===area &&
+        d.cycle===cycle &&
+        d.recommendation_id===recommendationId
+    );
+
+
+  if(!cell){
+
+    detail.innerHTML=
+      '<div class="notice">Não foi possível localizar esta célula nos dados.</div>';
+
+    return;
+  }
+
+
+  const cycleLabel=
+    rbrCycleDisplay(
+      cycle
+    );
+
+
+  let html=
+    '<div class="rbr-inline-head">'+
+
+      '<div>'+
+
+        '<p class="mini-label">'+
+          esc(area)+
+          " · "+
+          esc(cycleLabel)+
+        '</p>'+
+
+        '<h3>'+
+          esc(recommendationId)+
+          " · "+
+          esc(cell.recommendation_label)+
+        '</h3>'+
+
+      '</div>'+
+
+      '<button type="button" class="rbr-inline-close" aria-label="Fechar detalhes">×</button>'+
+
+    '</div>';
+
+
+  if(
+    cell.analysis_status===
+      "not_analyzed"
+  ){
+
+    html+=
+      '<div class="rbr-status-panel pending">'+
+
+        '<span class="rbr-big-status">▧</span>'+
+
+        '<div>'+
+
+          '<h4>Ainda não analisado nesta camada</h4>'+
+
+          '<p>O screening RBR de '+
+            esc(cycleLabel)+
+            ' ainda não foi executado para '+
+            esc(area)+
+            '. Isso não representa ausência da recomendação nem uma classificação <em>not_identified</em>.</p>'+
+
+        '</div>'+
+
+      '</div>'+
+
+      '<div class="rbr-detail-guardrail">'+
+
+        '<b>Status:</b> análise histórica pendente. Quando este ciclo for processado, as evidências documentais aparecerão exatamente neste espaço.'+
+
+      '</div>';
+
+
+    detail.innerHTML=
+      html;
+
+
+    wireRBRInlineClose();
+
+    detail.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+    return;
+  }
+
+
+  const rows=
+    RBR_DATA.evidence.filter(
+      d=>
+        d.area===area &&
+        d.cycle===cycle &&
+        d.recommendation_id===recommendationId
+    );
+
+
+  html+=
+    '<div class="rbr-chunk-box">'+
+
+      '<div>'+
+        '<span>Trecho analisado</span>'+
+        '<strong>p. '+
+          esc(cell.start_page)+
+          "–"+
+          esc(cell.end_page)+
+        '</strong>'+
+      '</div>'+
+
+      '<div>'+
+        '<span>Ciclo</span>'+
+        '<strong>'+
+          esc(cycleLabel)+
+        '</strong>'+
+      '</div>'+
+
+      '<div>'+
+        '<span>Escopo</span>'+
+        '<strong>chunk selecionado</strong>'+
+      '</div>'+
+
+    '</div>';
+
+
+  if(!rows.length){
+
+    html+=
+      '<div class="rbr-status-panel empty">'+
+
+        '<span class="rbr-big-status">○</span>'+
+
+        '<div>'+
+
+          '<h4>Nenhuma evidência candidata neste trecho</h4>'+
+
+          '<p>Nenhum finding foi registrado para esta recomendação nas páginas '+
+            esc(cell.start_page)+
+            "–"+
+            esc(cell.end_page)+
+            '. Isso <b>não</b> significa que a recomendação esteja ausente do documento completo.</p>'+
+
+        '</div>'+
+
+      '</div>';
+
+
+  }else{
+
+    html+=
+      '<div class="rbr-inline-result-summary">'+
+
+        '<strong>'+
+          rows.length+
+        '</strong>'+
+
+        '<span>'+
+          (
+            rows.length===1
+              ? "evidência candidata encontrada neste trecho"
+              : "evidências candidatas encontradas neste trecho"
+          )+
+        '</span>'+
+
+      '</div>'+
+
+
+      '<div class="rbr-evidence-list">';
+
+
+    rows.forEach(
+      (row,index)=>{
+
+        const directionClass=
+          rbrDirectionClass(
+            row.evidence_direction
+          );
+
+
+        html+=
+          '<article class="rbr-evidence-card '+
+            directionClass+
+          '">'+
+
+
+            '<div class="rbr-evidence-number">'+
+              "Evidência "+
+              (index+1)+
+              " de "+
+              rows.length+
+            '</div>'+
+
+
+            '<div class="rbr-evidence-top">'+
+
+              '<span class="rbr-detail-direction '+
+                directionClass+
+              '">'+
+                esc(
+                  rbrDirectionLabel(
+                    row
+                  )
+                )+
+              '</span>'+
+
+              '<span class="rbr-subcriterion">'+
+                esc(
+                  row.subcriterion_id
+                )+
+              '</span>'+
+
+            '</div>'+
+
+
+            '<h4>'+
+              esc(
+                row.subcriterion_label||
+                row.subcriterion_id
+              )+
+            '</h4>'+
+
+
+            '<div class="rbr-evidence-label">Citação literal</div>'+
+
+            '<blockquote>'+
+              "“"+
+              esc(
+                row.evidence_quote
+              )+
+              "”"+
+            '</blockquote>'+
+
+
+            '<div class="rbr-source-line">'+
+              "Ficha CAPES "+
+              esc(cycleLabel)+
+              " · p. "+
+              esc(
+                row.evidence_page
+              )+
+            '</div>'+
+
+
+            '<div class="rbr-rationale">'+
+
+              '<strong>Por que foi sinalizada?</strong>'+
+
+              '<p>'+
+                esc(
+                  row.coder_rationale
+                )+
+              '</p>'+
+
+            '</div>'+
+
+
+            '<div class="rbr-evidence-meta-grid">'+
+
+              '<div>'+
+                '<span>Subcritério</span>'+
+                '<strong>'+
+                  esc(
+                    row.subcriterion_id
+                  )+
+                '</strong>'+
+              '</div>'+
+
+              '<div>'+
+                '<span>Página</span>'+
+                '<strong>'+
+                  esc(
+                    row.evidence_page
+                  )+
+                '</strong>'+
+              '</div>'+
+
+              '<div>'+
+                '<span>Status</span>'+
+                '<strong>revisão humana pendente</strong>'+
+              '</div>'+
+
+            '</div>'+
+
+
+          '</article>';
+      }
+    );
+
+
+    html+=
+      "</div>";
+  }
+
+
+  html+=
+    '<div class="rbr-detail-guardrail">'+
+
+      '<b>Importante:</b> estas são evidências candidatas recuperadas no trecho selecionado. O número de evidências não é um score e não deve ser usado para comparar intensidade entre ciclos.'+
+
+    '</div>';
+
+
+  detail.innerHTML=
+    html;
+
+
+  wireRBRInlineClose();
+
+
+  detail.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+}
+
+
+function wireRBRInlineClose(){
+
+  const detail=
+    document.getElementById(
+      "rbr-evidence-detail"
+    );
+
+
+  if(!detail)return;
+
+
+  const close=
+    detail.querySelector(
+      ".rbr-inline-close"
+    );
+
+
+  if(!close)return;
+
+
+  close.onclick=()=>{
+
+    detail.innerHTML=
+      '<div class="rbr-inline-placeholder">'+
+
+        '<span class="rbr-inline-icon">↑</span>'+
+
+        '<div>'+
+
+          '<strong>Clique em uma célula da matriz</strong>'+
+
+          '<p>As evidências documentais daquele ciclo e recomendação aparecerão aqui, com citação, página, subcritério e interpretação candidata.</p>'+
+
+        '</div>'+
+
+      '</div>';
+  };
+}
+
+
+loadRBR();
+
+// RBR_MODULE_END
 init();

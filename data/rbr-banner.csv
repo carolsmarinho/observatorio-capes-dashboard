@@ -1,0 +1,2 @@
+banner_id,title_pt,message_pt,api_used,api_cost_usd,human_review_complete,final_area_classification_available
+rbr_pilot_methodological_status_v1,Piloto metodológico,"Esta seção apresenta um proof of concept baseado em três chunks selecionados das Fichas CAPES 2025–2028. Os resultados são evidências candidatas, ainda não constituem classificação final das áreas e não devem ser interpretados como ranking ou como ausência de critérios quando uma célula não contém evidência.",FALSE,0,FALSE,FALSE

@@ -1,0 +1,8 @@
+visual_state,label_pt,meaning_pt
+pro_only,Sinal favorável,O chunk selecionado contém ao menos uma evidência candidata potencialmente alinhada à recomendação.
+contra_only,Tensão,O chunk selecionado contém ao menos uma evidência candidata potencialmente em tensão com a recomendação.
+adjacent_only,Evidência adjacente,"O chunk selecionado contém conceito relacionado, mas insuficiente isoladamente para estabelecer alinhamento."
+pro_plus_adjacent,Favorável + adjacente,"O chunk selecionado contém evidência candidata favorável e também evidência relacionada, porém parcial."
+contra_plus_adjacent,Tensão + adjacente,"O chunk selecionado contém evidência candidata de tensão e também evidência relacionada, porém parcial."
+mixed_pro_contra,Favorável + tensão,O chunk selecionado contém simultaneamente evidências candidatas de alinhamento e de tensão.
+no_candidate,Sem evidência candidata neste chunk,Nenhuma evidência candidata foi registrada para esta recomendação no chunk selecionado do piloto. Isto NÃO significa ausência documental.

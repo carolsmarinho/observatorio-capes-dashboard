@@ -24,7 +24,10 @@
       <a href="#criterios">Critérios</a>
       <a href="#mudancas">Mudanças</a>
       <a href="#areas">Explore</a>
-      <a href="#fontes">Fontes & dados</a>
+      <!-- RBR_NAV_START -->
+      <a href="#ciencia-aberta">Ciência aberta</a>
+<!-- RBR_NAV_END -->
+<a href="#fontes">Fontes & dados</a>
       <a href="#metodo">Método</a>
     </nav>
     <a class="repo-link" href="https://github.com/carolsmarinho/observatorio-capes-dashboard" target="_blank" rel="noreferrer">GitHub ↗</a>
@@ -187,9 +190,285 @@
     </div>
   </section>
 
-  <section class="section section-reveal" id="fontes">
+  <!-- RBR_SECTION_START -->
+
+  <section class="section section-reveal" id="ciencia-aberta">
+
     <div class="section-heading">
-      <div><p class="kicker">05 · Fontes & dados</p><h2>Não precisa confiar no gráfico: confira.</h2></div>
+
+      <div>
+
+        <p class="kicker">
+          05 · Ciência aberta
+        </p>
+
+        <h2>
+          Como as recomendações da RBR aparecem ao longo dos ciclos?
+        </h2>
+
+      </div>
+
+      <p>
+        Explore uma área por vez e compare os três ciclos da avaliação.
+        No momento, apenas 2025–2028 passou pelo proof of concept desta
+        camada; os ciclos históricos permanecem explicitamente marcados
+        como ainda não analisados.
+      </p>
+
+    </div>
+
+
+    <div class="rbr-banner panel">
+
+      <div>
+
+        <p class="mini-label">
+          Status da análise longitudinal
+        </p>
+
+        <h3>
+          A interface está pronta para três ciclos; a análise ainda não.
+        </h3>
+
+        <p class="help-text">
+          O proof of concept atual examinou um trecho selecionado das
+          Fichas 2025–2028 de Psicologia, Química e Saúde Coletiva.
+          2017–2020 e 2021–2024 aparecem abaixo como “Ainda não analisado”,
+          e não como ausência de evidência.
+        </p>
+
+      </div>
+
+
+      <div class="rbr-banner-chips">
+
+        <span>
+          ciclo analisado:
+          <b>2025–2028</b>
+        </span>
+
+        <span>
+          ciclos pendentes:
+          <b>2</b>
+        </span>
+
+        <span>
+          API:
+          <b>0 chamadas</b>
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="rbr-summary" id="rbr-summary">
+
+      <div class="panel compact-panel">
+        <strong>20</strong>
+        <span>evidências candidatas</span>
+      </div>
+
+      <div class="panel compact-panel">
+        <strong>20/20</strong>
+        <span>verificadas na fonte</span>
+      </div>
+
+      <div class="panel compact-panel">
+        <strong>2025–2028</strong>
+        <span>ciclo com screening piloto</span>
+      </div>
+
+      <div class="panel compact-panel">
+        <strong>2</strong>
+        <span>ciclos históricos ainda pendentes</span>
+      </div>
+
+    </div>
+
+
+    <div class="rbr-method-note">
+
+      <strong>
+        Como interpretar longitudinalmente:
+      </strong>
+
+      a quantidade de evidências encontradas em um documento
+      <b>não será usada como medida de aumento ou redução</b> de Ciência
+      Aberta. A comparação entre ciclos só será liberada após screening
+      completo e adjudicação por documento.
+
+    </div>
+
+
+    <div class="rbr-area-selector">
+
+      <div>
+
+        <p class="mini-label">
+          Escolha uma área
+        </p>
+
+        <div
+          class="area-tabs"
+          id="rbr-area-tabs"
+        ></div>
+
+      </div>
+
+
+      <div class="rbr-selected-area-meta">
+
+        <span>Área selecionada</span>
+
+        <strong id="rbr-selected-area">
+          Psicologia
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <div class="rbr-legend">
+
+      <span>
+        <i class="rbr-dot pro"></i>
+        <b>Alinhamento candidato</b>
+        — potencialmente consistente com a recomendação
+      </span>
+
+      <span>
+        <i class="rbr-dot contra"></i>
+        <b>Tensão candidata</b>
+        — potencial conflito com a recomendação
+      </span>
+
+      <span>
+        <i class="rbr-dot adjacent"></i>
+        <b>Evidência adjacente</b>
+        — relacionada, mas insuficiente isoladamente
+      </span>
+
+      <span>
+        <i class="rbr-empty-symbol">○</i>
+        <b>Nenhum candidato no trecho</b>
+        — não significa ausência no documento
+      </span>
+
+      <span>
+        <i class="rbr-pending-symbol">▧</i>
+        <b>Ainda não analisado</b>
+        — screening RBR ainda não realizado
+      </span>
+
+    </div>
+
+
+    <div class="panel rbr-longitudinal-panel">
+
+      <div class="panel-head">
+
+        <div>
+
+          <p class="mini-label">
+            Recomendação × ciclo
+          </p>
+
+          <h3>
+            Da recomendação à evidência, ciclo por ciclo
+          </h3>
+
+        </div>
+
+        <p class="help-text">
+          Clique em qualquer célula. Quando há screening, você verá o trecho
+          analisado e as evidências candidatas. Nos ciclos pendentes, verá
+          explicitamente o status de análise.
+        </p>
+
+      </div>
+
+
+      <div class="rbr-matrix-scroll">
+
+        <div
+          id="rbr-longitudinal-matrix"
+          class="rbr-longitudinal-matrix"
+          aria-live="polite"
+        >
+          Carregando análise longitudinal…
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- RBR_INLINE_EVIDENCE_START -->
+
+    <div
+      id="rbr-evidence-detail"
+      class="rbr-inline-detail"
+      aria-live="polite"
+    >
+
+      <div class="rbr-inline-placeholder">
+
+        <span class="rbr-inline-icon">
+          ↑
+        </span>
+
+        <div>
+
+          <strong>
+            Clique em uma célula da matriz
+          </strong>
+
+          <p>
+            As evidências documentais daquele ciclo e recomendação
+            aparecerão aqui, com citação, página, subcritério e
+            interpretação candidata.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+<!-- RBR_INLINE_EVIDENCE_END -->
+<div class="rbr-future-box">
+
+      <div>
+
+        <p class="mini-label">
+          Próxima camada analítica
+        </p>
+
+        <h3>
+          O que permitirá dizer se uma recomendação ganhou ou perdeu espaço?
+        </h3>
+
+      </div>
+
+      <p>
+        Após o screening integral dos três ciclos, cada
+        <b>área × ciclo × recomendação</b> poderá receber adjudicação
+        documental — por exemplo, evidência explícita, parcial/adjacente,
+        contraditória, incerta ou não identificada no corpus inspecionado.
+        É essa classificação, acompanhada das evidências abaixo dela, que
+        permitirá uma leitura longitudinal responsável.
+      </p>
+
+    </div>
+
+  </section>
+
+<!-- RBR_SECTION_END -->
+<section class="section section-reveal" id="fontes">
+    <div class="section-heading">
+      <div><p class="kicker">06 · Fontes & dados</p><h2>Não precisa confiar no gráfico: confira.</h2></div>
       <p>Cada resultado público tem uma saída de dados e um caminho de volta à documentação oficial da CAPES.</p>
     </div>
 
@@ -210,7 +489,40 @@
       <a href="data/comparable-weights.csv" download><b>comparable-weights.csv</b><span>pesos antes/agora nas sete relações 1:1</span></a>
       <a href="data/claims-evidence-limits.csv" download><b>claims-evidence-limits.csv</b><span>o que afirmamos, evidência e limite</span></a>
       <a href="data/source-documents.csv" download><b>source-documents.csv</b><span>registro das Fichas e links oficiais</span></a>
-      <a href="data/pilot-data.json" download><b>pilot-data.json</b><span>camada principal exportada do pipeline</span></a>
+      <!-- RBR_DOWNLOADS_START -->
+
+      <a href="data/rbr-longitudinal-matrix.csv" download>
+        <b>rbr-longitudinal-matrix.csv</b>
+        <span>72 células: 3 áreas × 8 recomendações × 3 ciclos</span>
+      </a>
+
+      <a href="data/rbr-matrix.csv" download>
+        <b>rbr-matrix.csv</b>
+        <span>matriz do proof of concept 2025–2028</span>
+      </a>
+
+      <a href="data/rbr-evidence.csv" download>
+        <b>rbr-evidence.csv</b>
+        <span>evidências candidatas com citação, página e status</span>
+      </a>
+
+      <a href="data/rbr-legend.csv" download>
+        <b>rbr-legend.csv</b>
+        <span>semântica dos estados da camada RBR</span>
+      </a>
+
+      <a href="data/rbr-banner.csv" download>
+        <b>rbr-banner.csv</b>
+        <span>guardrails metodológicos do proof of concept</span>
+      </a>
+
+      <a href="data/rbr-data.json" download>
+        <b>rbr-data.json</b>
+        <span>camada longitudinal usada pela interface</span>
+      </a>
+
+<!-- RBR_DOWNLOADS_END -->
+<a href="data/pilot-data.json" download><b>pilot-data.json</b><span>camada principal exportada do pipeline</span></a>
       <a href="data/evidence-data.json" download><b>evidence-data.json</b><span>camada de rastreabilidade da interface</span></a>
       <a href="data/dashboard_sync_audit.csv" download><b>dashboard_sync_audit.csv</b><span>checagens de sincronização e QA</span></a>
     </div>
@@ -221,7 +533,7 @@
 
   <section class="section alt section-reveal" id="metodo">
     <div class="section-heading">
-      <div><p class="kicker">06 · Método</p><h2>Como chegamos do PDF ao dashboard?</h2></div>
+      <div><p class="kicker">07 · Método</p><h2>Como chegamos do PDF ao dashboard?</h2></div>
       <p>A separação entre fonte, extração, validação, harmonização e visualização permite atualizar o observatório sem perder a trilha de proveniência.</p>
     </div>
 
