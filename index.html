@@ -20,14 +20,11 @@
       <span class="brand-text"><strong>Observatório CAPES</strong><small>piloto metodológico</small></span>
     </a>
     <nav class="nav-links" aria-label="Navegação principal">
-      <a href="#entenda">Entenda</a>
+      <a href="#entenda">Comece</a>
       <a href="#criterios">Critérios</a>
       <a href="#mudancas">Mudanças</a>
-      <a href="#areas">Explore</a>
-      <!-- RBR_NAV_START -->
+      <a href="#areas">Áreas</a>
       <a href="#ciencia-aberta">Ciência aberta</a>
-<!-- RBR_NAV_END -->
-<a href="#fontes">Fontes & dados</a>
       <a href="#metodo">Método</a>
     </nav>
     <a class="repo-link" href="https://github.com/carolsmarinho/observatorio-capes-dashboard" target="_blank" rel="noreferrer">GitHub ↗</a>
@@ -36,34 +33,42 @@
 
 <main id="main">
   <section class="hero section-reveal" id="top">
-    <div class="hero-glow glow-one"></div>
-    <div class="hero-glow glow-two"></div>
-    <div class="hero-inner">
+    <div class="hero-inner clean-hero">
       <div class="hero-copy">
-        <div class="status-pill"><span></span> piloto · 3 áreas · 3 ciclos</div>
-        <p class="eyebrow">O que a CAPES avalia — e como isso mudou?</p>
-        <h1>Observatório da<br><em>Avaliação da CAPES</em></h1>
-        <p class="hero-lede">Um guia visual e verificável para entender os critérios usados na avaliação dos programas de pós-graduação, acompanhar mudanças entre ciclos e ir da conclusão até a fonte oficial.</p>
+        <div class="status-pill"><span></span> piloto em desenvolvimento</div>
+        <p class="eyebrow">Avaliação da pós-graduação, em linguagem mais simples</p>
+        <h1>O que a CAPES avalia<br><em>e como isso muda?</em></h1>
+        <p class="hero-lede">
+          A CAPES avalia programas de pós-graduação em diferentes ciclos. Este painel ajuda a entender
+          quais critérios aparecem nas Fichas de Avaliação, como eles mudam ao longo do tempo e onde
+          surgem aproximações com ciência aberta e avaliação responsável.
+        </p>
         <div class="hero-actions">
-          <a class="button primary" href="#entenda">Começar pelo básico</a>
-          <a class="button ghost" href="#fontes">Ver fontes e dados</a>
+          <a class="button primary" href="#entenda">Entender o básico</a>
+          <a class="button ghost" href="#ciencia-aberta">Ir para ciência aberta</a>
         </div>
       </div>
 
-      <aside class="hero-side">
+      <aside class="hero-side clean-hero-side">
         <div class="hero-question glass-card">
-          <p class="mini-label light">Resultado central do piloto</p>
+          <p class="mini-label light">Uma mudança que chama atenção</p>
           <strong>12 → 12 → 10</strong>
-          <p>itens top-level por área</p>
-          <small>Mas “10” não significa que dois conteúdos simplesmente desapareceram. Alguns critérios foram mantidos, outros reformulados, absorvidos, redistribuídos ou divididos.</small>
+          <p>itens principais por área no piloto</p>
+          <small>
+            Isso não quer dizer que dois temas simplesmente desapareceram:
+            alguns critérios foram reorganizados, unidos ou reformulados.
+          </small>
         </div>
 
-        <div class="hero-metrics">
-          <div class="metric-card glass-card"><strong id="metric-areas">3</strong><span>áreas piloto</span></div>
-          <div class="metric-card glass-card"><strong id="metric-relations">13</strong><span>relações semânticas</span></div>
-          <div class="metric-card glass-card"><strong id="metric-safe">7</strong><span>comparações 1:1</span></div>
-          <div class="metric-card glass-card"><strong id="metric-stable">72/72</strong><span>pesos estáveis 2017→2021</span></div>
-        </div>
+        <details class="hero-data-details glass-card">
+          <summary>Ver números do piloto</summary>
+          <div class="hero-metrics">
+            <div class="metric-card"><strong id="metric-areas">3</strong><span>áreas piloto</span></div>
+            <div class="metric-card"><strong id="metric-relations">13</strong><span>relações entre critérios</span></div>
+            <div class="metric-card"><strong id="metric-safe">7</strong><span>comparações diretas</span></div>
+            <div class="metric-card"><strong id="metric-stable">72/72</strong><span>pesos estáveis em 2017→2021</span></div>
+          </div>
+        </details>
       </aside>
     </div>
   </section>
@@ -98,8 +103,8 @@
 
   <section class="section alt section-reveal" id="criterios">
     <div class="section-heading">
-      <div><p class="kicker">02 · Critérios</p><h2>Quais critérios estamos comparando?</h2></div>
-      <p>Leia os textos completos antes de olhar os números. Passe o cursor para destacar; clique em um critério para ampliá-lo.</p>
+      <div><p class="kicker">02 · Critérios</p><h2>O que, exatamente, entra na avaliação?</h2></div>
+      <p>Veja como cada quesito é desdobrado em critérios. Você pode alternar entre os ciclos e abrir um item para ler com mais calma.</p>
     </div>
 
     <div class="notice"><strong>Sobre 2017–2020:</strong> a arquitetura top-level é a mesma observada em 2021–2024 no piloto. O navegador abaixo foca a transição semântica validada diretamente: <b>2021–2024 → 2025–2028</b>.</div>
@@ -114,8 +119,8 @@
 
   <section class="section section-reveal" id="mudancas">
     <div class="section-heading">
-      <div><p class="kicker">03 · O que mudou?</p><h2>De 12 para 10: acompanhe critério por critério.</h2></div>
-      <p>O crosswalk compara conteúdo, não apenas o número do item. Relações 1:1 podem ser comparadas diretamente; consolidações, divisões e redistribuições exigem outra leitura.</p>
+      <div><p class="kicker">03 · O que mudou?</p><h2>Quando um critério muda, o que aconteceu com ele?</h2></div>
+      <p>Nem toda mudança de número significa mudança de conteúdo. Aqui mostramos quais critérios continuam comparáveis e quais foram reorganizados.</p>
     </div>
 
     <div class="semantic-summary panel expandable-panel" data-panel-title="Resumo das mudanças semânticas">
@@ -134,8 +139,8 @@
 
   <section class="section alt section-reveal" id="areas">
     <div class="section-heading">
-      <div><p class="kicker">04 · Explore por área</p><h2>O que ganhou peso — e o que perdeu prioridade?</h2></div>
-      <p>Escolha uma área e um tipo de programa. O gráfico abaixo mostra a direção e a magnitude das mudanças quando a comparação é válida.</p>
+      <div><p class="kicker">04 · Explore por área</p><h2>Como o peso dos critérios mudou em cada área?</h2></div>
+      <p>Escolha uma área e compare apenas os casos em que os critérios são suficientemente semelhantes entre os ciclos.</p>
     </div>
 
     <div class="area-tabs" id="area-tabs">
@@ -194,274 +199,182 @@
 
   <section class="section section-reveal" id="ciencia-aberta">
 
-    <div class="section-heading">
-
+    <div class="section-heading rbr-section-heading">
       <div>
-
-        <p class="kicker">
-          05 · Ciência aberta
-        </p>
-
-        <h2>
-          Como as recomendações da RBR aparecem ao longo dos ciclos?
-        </h2>
-
+        <p class="kicker">05 · Ciência aberta</p>
+        <h2>Ciência aberta também pode fazer parte da forma de avaliar ciência.</h2>
       </div>
-
       <p>
-        Explore uma área por vez e compare os três ciclos da avaliação.
-        No momento, apenas 2025–2028 passou pelo proof of concept desta
-        camada; os ciclos históricos permanecem explicitamente marcados
-        como ainda não analisados.
+        Nesta parte do piloto, usamos recomendações da Rede Brasileira de Reprodutibilidade (RBR)
+        como uma lente para ler as Fichas da CAPES. A pergunta é simples:
+        <b>os critérios de avaliação valorizam práticas mais abertas e responsáveis?</b>
       </p>
-
     </div>
 
+    <div class="rbr-explainer">
+      <div class="rbr-explainer-copy">
+        <p class="mini-label">Antes da matriz</p>
+        <h3>O que são as recomendações da RBR?</h3>
+        <p>
+          São propostas para tornar a avaliação da pesquisa menos dependente de indicadores isolados
+          e mais atenta à qualidade, abertura, integridade, formação e diversidade das contribuições científicas.
+          Neste painel, elas funcionam como <b>perguntas de leitura</b> — não como uma nota para cada área.
+        </p>
+      </div>
 
-    <div class="rbr-banner panel">
+      <div class="rbr-reading-steps" aria-label="Como ler esta análise">
+        <div><span>1</span><p><b>Escolha uma área.</b><br>Psicologia, Química ou Saúde Coletiva.</p></div>
+        <div><span>2</span><p><b>Olhe o ciclo.</b><br>Os anos ainda não analisados aparecem como pendentes.</p></div>
+        <div><span>3</span><p><b>Clique no resultado.</b><br>A citação e a página aparecem logo abaixo.</p></div>
+      </div>
+    </div>
 
+    <div class="rbr-recommendations-wrap">
+      <div class="rbr-guide-head">
+        <div>
+          <p class="mini-label">As 8 recomendações usadas no piloto</p>
+          <h3>Em linguagem simples</h3>
+        </div>
+        <p>Abra uma recomendação se quiser entender melhor o que estamos procurando nos documentos.</p>
+      </div>
+
+      <div class="rbr-recommendations-grid">
+        <details class="rbr-recommendation">
+          <summary><span>RBR01</span><strong>Ir além do prestígio do periódico</strong></summary>
+          <p>Diversificar métricas e evitar que o veículo de publicação seja tratado, sozinho, como sinônimo de qualidade da pesquisa.</p>
+        </details>
+
+        <details class="rbr-recommendation">
+          <summary><span>RBR02</span><strong>Valorizar avaliação qualitativa</strong></summary>
+          <p>Considerar a qualidade e a relevância do trabalho por meio de análise qualitativa, e não apenas por números e indicadores.</p>
+        </details>
+
+        <details class="rbr-recommendation">
+          <summary><span>RBR03</span><strong>Valorizar acesso aberto</strong></summary>
+          <p>Reconhecer artigos, teses e dissertações que possam ser acessados abertamente.</p>
+        </details>
+
+        <details class="rbr-recommendation">
+          <summary><span>RBR04</span><strong>Valorizar dados, materiais e código abertos</strong></summary>
+          <p>Reconhecer o compartilhamento responsável de dados, materiais, protocolos e códigos usados na pesquisa.</p>
+        </details>
+
+        <details class="rbr-recommendation">
+          <summary><span>RBR05</span><strong>Formar para práticas abertas e reprodutíveis</strong></summary>
+          <p>Valorizar formação em metodologia, reprodutibilidade e práticas de ciência aberta.</p>
+        </details>
+
+        <details class="rbr-recommendation">
+          <summary><span>RBR06</span><strong>Ter políticas de integridade e ciência aberta</strong></summary>
+          <p>Incentivar políticas institucionais de integridade científica, gestão de dados e abertura da pesquisa.</p>
+        </details>
+
+        <details class="rbr-recommendation">
+          <summary><span>RBR07</span><strong>Reconhecer contribuições educacionais abertas</strong></summary>
+          <p>Valorizar materiais, atividades e ações educacionais que alcancem públicos para além dos estudantes do próprio programa.</p>
+        </details>
+
+        <details class="rbr-recommendation">
+          <summary><span>RBR08</span><strong>Reconhecer contribuições além de artigos</strong></summary>
+          <p>Considerar outras formas de contribuição acadêmica e social, como editoração, participação em comitês, formação, produtos e impacto.</p>
+        </details>
+      </div>
+
+      <p class="rbr-guide-note">
+        Estes textos são resumos em linguagem simples para navegação. A codificação do estudo usa o codebook completo e mantém a evidência documental.
+      </p>
+    </div>
+
+    <div class="rbr-pilot-strip">
+      <div><strong>3</strong><span>áreas</span></div>
+      <div><strong>2025–2028</strong><span>ciclo com screening piloto</span></div>
+      <div><strong>20</strong><span>evidências candidatas</span></div>
+    </div>
+
+    <div class="rbr-plain-warning">
+      <span>!</span>
+      <p>
+        <b>Mais evidências não significa “mais ciência aberta”.</b>
+        A contagem serve apenas para mostrar quantos trechos candidatos apareceram no recorte analisado.
+        A comparação entre ciclos só será feita depois do screening completo e da adjudicação documental.
+      </p>
+    </div>
+
+    <details class="rbr-audit-details">
+      <summary>Sobre o estágio deste piloto</summary>
       <div>
-
-        <p class="mini-label">
-          Status da análise longitudinal
+        <p>
+          O recorte atual examinou um trecho selecionado das Fichas 2025–2028 de Psicologia,
+          Química e Saúde Coletiva. Os ciclos 2017–2020 e 2021–2024 ainda não passaram por este screening.
         </p>
-
-        <h3>
-          A interface está pronta para três ciclos; a análise ainda não.
-        </h3>
-
-        <p class="help-text">
-          O proof of concept atual examinou um trecho selecionado das
-          Fichas 2025–2028 de Psicologia, Química e Saúde Coletiva.
-          2017–2020 e 2021–2024 aparecem abaixo como “Ainda não analisado”,
-          e não como ausência de evidência.
-        </p>
-
+        <ul>
+          <li>20 evidências candidatas registradas e verificadas na fonte.</li>
+          <li>Revisão humana substantiva ainda pendente.</li>
+          <li>Nenhuma célula é usada como score ou ranking.</li>
+          <li>“Nenhum candidato no trecho” não equivale a ausência no documento.</li>
+          <li>A execução deste proof of concept não usou API paga.</li>
+        </ul>
       </div>
-
-
-      <div class="rbr-banner-chips">
-
-        <span>
-          ciclo analisado:
-          <b>2025–2028</b>
-        </span>
-
-        <span>
-          ciclos pendentes:
-          <b>2</b>
-        </span>
-
-        <span>
-          API:
-          <b>0 chamadas</b>
-        </span>
-
-      </div>
-
-    </div>
-
-
-    <div class="rbr-summary" id="rbr-summary">
-
-      <div class="panel compact-panel">
-        <strong>20</strong>
-        <span>evidências candidatas</span>
-      </div>
-
-      <div class="panel compact-panel">
-        <strong>20/20</strong>
-        <span>verificadas na fonte</span>
-      </div>
-
-      <div class="panel compact-panel">
-        <strong>2025–2028</strong>
-        <span>ciclo com screening piloto</span>
-      </div>
-
-      <div class="panel compact-panel">
-        <strong>2</strong>
-        <span>ciclos históricos ainda pendentes</span>
-      </div>
-
-    </div>
-
-
-    <div class="rbr-method-note">
-
-      <strong>
-        Como interpretar longitudinalmente:
-      </strong>
-
-      a quantidade de evidências encontradas em um documento
-      <b>não será usada como medida de aumento ou redução</b> de Ciência
-      Aberta. A comparação entre ciclos só será liberada após screening
-      completo e adjudicação por documento.
-
-    </div>
-
+    </details>
 
     <div class="rbr-area-selector">
-
       <div>
-
-        <p class="mini-label">
-          Escolha uma área
-        </p>
-
-        <div
-          class="area-tabs"
-          id="rbr-area-tabs"
-        ></div>
-
+        <p class="mini-label">Escolha uma área</p>
+        <div class="area-tabs" id="rbr-area-tabs"></div>
       </div>
-
-
       <div class="rbr-selected-area-meta">
-
         <span>Área selecionada</span>
-
-        <strong id="rbr-selected-area">
-          Psicologia
-        </strong>
-
+        <strong id="rbr-selected-area">Psicologia</strong>
       </div>
-
     </div>
 
-
-    <div class="rbr-legend">
-
-      <span>
-        <i class="rbr-dot pro"></i>
-        <b>Alinhamento candidato</b>
-        — potencialmente consistente com a recomendação
-      </span>
-
-      <span>
-        <i class="rbr-dot contra"></i>
-        <b>Tensão candidata</b>
-        — potencial conflito com a recomendação
-      </span>
-
-      <span>
-        <i class="rbr-dot adjacent"></i>
-        <b>Evidência adjacente</b>
-        — relacionada, mas insuficiente isoladamente
-      </span>
-
-      <span>
-        <i class="rbr-empty-symbol">○</i>
-        <b>Nenhum candidato no trecho</b>
-        — não significa ausência no documento
-      </span>
-
-      <span>
-        <i class="rbr-pending-symbol">▧</i>
-        <b>Ainda não analisado</b>
-        — screening RBR ainda não realizado
-      </span>
-
+    <div class="rbr-legend rbr-legend-clean" aria-label="Legenda da matriz">
+      <span><i class="rbr-dot pro"></i><b>Alinhamento</b><small>sinal favorável</small></span>
+      <span><i class="rbr-dot contra"></i><b>Tensão</b><small>possível conflito</small></span>
+      <span><i class="rbr-dot adjacent"></i><b>Adjacente</b><small>relacionado, mas insuficiente</small></span>
+      <span><i class="rbr-empty-symbol">○</i><b>Sem candidato</b><small>apenas neste trecho</small></span>
+      <span><i class="rbr-pending-symbol">▧</i><b>Pendente</b><small>ainda não analisado</small></span>
     </div>
-
 
     <div class="panel rbr-longitudinal-panel">
-
       <div class="panel-head">
-
         <div>
-
-          <p class="mini-label">
-            Recomendação × ciclo
-          </p>
-
-          <h3>
-            Da recomendação à evidência, ciclo por ciclo
-          </h3>
-
+          <p class="mini-label">Recomendação × ciclo</p>
+          <h3>O que apareceu em cada ciclo?</h3>
         </div>
-
         <p class="help-text">
-          Clique em qualquer célula. Quando há screening, você verá o trecho
-          analisado e as evidências candidatas. Nos ciclos pendentes, verá
-          explicitamente o status de análise.
+          Clique em uma célula para ver o trecho do documento. Por enquanto,
+          apenas 2025–2028 contém resultados do screening piloto.
         </p>
-
       </div>
-
 
       <div class="rbr-matrix-scroll">
-
-        <div
-          id="rbr-longitudinal-matrix"
-          class="rbr-longitudinal-matrix"
-          aria-live="polite"
-        >
+        <div id="rbr-longitudinal-matrix" class="rbr-longitudinal-matrix" aria-live="polite">
           Carregando análise longitudinal…
         </div>
-
       </div>
-
     </div>
-
 
     <!-- RBR_INLINE_EVIDENCE_START -->
-
-    <div
-      id="rbr-evidence-detail"
-      class="rbr-inline-detail"
-      aria-live="polite"
-    >
-
+    <div id="rbr-evidence-detail" class="rbr-inline-detail" aria-live="polite">
       <div class="rbr-inline-placeholder">
-
-        <span class="rbr-inline-icon">
-          ↑
-        </span>
-
+        <span class="rbr-inline-icon">↑</span>
         <div>
-
-          <strong>
-            Clique em uma célula da matriz
-          </strong>
-
-          <p>
-            As evidências documentais daquele ciclo e recomendação
-            aparecerão aqui, com citação, página, subcritério e
-            interpretação candidata.
-          </p>
-
+          <strong>Escolha uma célula acima para ver a evidência.</strong>
+          <p>Aqui aparecerão a citação literal, a página, o subcritério e a interpretação candidata.</p>
         </div>
-
       </div>
-
     </div>
+    <!-- RBR_INLINE_EVIDENCE_END -->
 
-<!-- RBR_INLINE_EVIDENCE_END -->
-<div class="rbr-future-box">
-
-      <div>
-
-        <p class="mini-label">
-          Próxima camada analítica
-        </p>
-
-        <h3>
-          O que permitirá dizer se uma recomendação ganhou ou perdeu espaço?
-        </h3>
-
-      </div>
-
+    <details class="rbr-future-details">
+      <summary>Quando poderemos comparar os ciclos de verdade?</summary>
       <p>
-        Após o screening integral dos três ciclos, cada
-        <b>área × ciclo × recomendação</b> poderá receber adjudicação
-        documental — por exemplo, evidência explícita, parcial/adjacente,
-        contraditória, incerta ou não identificada no corpus inspecionado.
-        É essa classificação, acompanhada das evidências abaixo dela, que
-        permitirá uma leitura longitudinal responsável.
+        Depois do screening integral dos três ciclos, cada combinação de área, ciclo e recomendação
+        poderá receber uma adjudicação documental. Só então será possível discutir, com cautela,
+        se uma recomendação ganhou ou perdeu espaço ao longo do tempo.
       </p>
-
-    </div>
+    </details>
 
   </section>
 
